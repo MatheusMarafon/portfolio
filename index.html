@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus | Portfólio de TI</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    
+    <link rel="stylesheet" href="./styles/main.css"> 
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="50">
+
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <div class="scroll-progress"></div>
+    <div class="custom-cursor"></div>
+    
+    <div id="auxiliary-buttons">
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar Modo Escuro">
+            <span id="themeIcon">🌙</span>
+        </button>
+
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir Chat">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao Topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#hero">Matheus Ribeiro Marafon</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="d-flex align-items-center" style="min-height: 100vh;">
+            <div id="particles-js"></div>
+            <div class="hero-parallax"></div>
+            <div class="container text-center" data-aos="fade-zoom-in" data-aos-duration="1000">
+                <h1 class="display-3 fw-bolder text-white">Matheus Marafon</h1>
+                <p class="lead mb-4 typed-text">
+                    <span id="typed"></span>
+                </p>
+                <a href="#projetos" class="btn btn-primary btn-lg shadow-lg">Ver Projetos</a>
+                <a href="#contato" class="btn btn-outline-light btn-lg ms-3">Fale Comigo</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="stats-section" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-4 stat-item">
+                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-label">Projetos no Portfólio</span>
+                    </div>
+                    <div class="col-md-4 stat-item">
+                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-label">Meses de Estágio (Web/Python)</span>
+                    </div>
+                    <div class="col-md-4 stat-item">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-label">Anos de Formação em TI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="sobre" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-down">Sobre Mim e Habilidades</h2>
+                
+                <div class="row align-items-start">
+                    <div class="col-lg-6 mb-5" data-aos="fade-right">
+                        <p class="lead">Olá! Sou um entusiasta de TI em <span class="bold-strong">Estágio</span>, focado em <span class="bold-strong">Desenvolvimento Web</span> e <span class="bold-strong">Automação</span>. Estou no 4º ano da faculdade e tenho 6 meses de experiência prática em produção.</p>
+                        <p>Minha missão é transformar desafios complexos em soluções digitais elegantes e performáticas, aplicando sempre as melhores práticas de desenvolvimento.</p>
+
+                        <h4 class="mt-4 mb-3">Currículo</h4>
+                        <a href="[LINK_DO_SEU_CURRICULO_PDF]" class="btn btn-primary shadow-sm" target="_blank">
+                            <i class="fas fa-download me-2"></i> Baixar Currículo (PDF)
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up">
+                        <h4 class="mb-3 text-primary">Hard Skills</h4>
+                        <p class="mb-2 fw-bold">Stack Principal:</p>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>Python</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>JavaScript (ES6+)</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>HTML & CSS</span><span>88%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 88%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>Automação & Scripts</span><span>82%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 82%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 mb-4 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="mb-3 text-primary">Soft Skills</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Resolução de Problemas</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Comunicação Técnica</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Aprendizado Rápido</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Adaptabilidade</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Gestão do Tempo</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Proatividade e Iniciativa</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Pensamento Crítico</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-3" data-aos="fade-down">Meus Principais Projetos</h2>
+                
+                <div class="filter-buttons" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="automation">Automação</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                </div>
+                
+                <div class="row" id="projectsContainer">
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web python" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-primary">Projeto 1: App de Estudos Interativo</h5>
+                                <p class="card-text flex-grow-1">Demonstração de manipulação de DOM e lógica JavaScript pura. (Foco em desenvolvimento front-end).</p>
+                                <a href="https://github.com/MatheusMarafon/sistema-estudo" class="btn btn-primary mt-3" target="_blank">Ver Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="automation python" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Projeto 2: Script de Automação</h5>
+                                <p class="card-text flex-grow-1">Um script em Python para automatizar tarefas repetitivas. Foco em performance e eficiência CLI.</p>
+                                <a href="https://github.com/MatheusMarafon" class="btn btn-primary mt-3" target="_blank">Ver Código-Fonte (NÃO ATRIBUÍDO)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-primary">Projeto 3: Landing Page Moderna</h5>
+                                <p class="card-text flex-grow-1">Design responsivo com animações suaves e efeitos glassmorphism (HTML/CSS/JS).</p>
+                                <a href="https://github.com/MatheusMarafon/sistema-gestao-refatorado" class="btn btn-primary mt-3" target="_blank">Ver Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="python automation" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Projeto 4: Bot de Dados</h5>
+                                <p class="card-text flex-grow-1">Bot para coleta e processamento de dados com Python e APIs REST (Back-end/CLI).</p>
+                                <a href="https://github.com/MatheusMarafon" class="btn btn-primary mt-3" target="_blank">Ver Código-Fonte (NÃO ATRIBUÍDO)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-primary">Projeto 5: Dashboard Interativo</h5>
+                                <p class="card-text flex-grow-1">Painel de controle com gráficos dinâmicos e visualização de dados (Front-end/DataViz).</p>
+                                <a href="https://github.com/MatheusMarafon" class="btn btn-primary mt-3" target="_blank">Ver Código-Fonte (NÃO ATRIBUÍDO)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="python" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Projeto 6: Gerenciador de Tarefas</h5>
+                                <p class="card-text flex-grow-1">Sistema de gerenciamento com banco de dados SQLite e interface CLI.</p>
+                                <a href="https://github.com/MatheusMarafon" class="btn btn-primary mt-3" target="_blank">Ver Código-Fonte (NÃO ATRIBUÍDO)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4" data-aos="fade-up">Entre em Contato</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-center lead">Prefere um contato direto? Preencha o formulário ou use os links abaixo:</p>
+                        <form action="[COLE A URL DO FORMSPREE AQUI]" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="_replyto" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://github.com/MatheusMarafon" target="_blank" class="mx-2 footer-icon" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/matheus-ribeiro-marafon-220953286/" target="_blank" class="mx-2 footer-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                </a>
+                <a href="mailto:seu.email@gmail.com?subject=Contato%20pelo%20Portfólio&body=Olá%2C%20Matheus.%0D%0AEstou%20entrando%20em%20contato%20através%20do%20seu%20site." class="mx-2 footer-icon" aria-label="Email">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+            </div>
+            
+            <p class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 
+                Localização: Campinas, São Paulo, Brasil
+            </p>
+
+            <p class="mb-0">&copy; <span id="currentYear"></span> Matheus Ribeiro Marafon. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h5>MatheusBot</h5>
+        </div>
+        <div class="chatbot-messages" id="chatMessages">
+            </div>
+        <div class="chatbot-input-area">
+            <div id="chatOptions" class="d-grid gap-2 w-100">
+                </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <script src="./scripts/main.js"></script>
+
+</body>
+</html>
