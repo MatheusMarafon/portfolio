@@ -974,3 +974,16 @@ footer {
 .bold-strong {
     font-weight: 500;
 }
+/* ========================================
+   18. AJUSTE DE OPACIDADE (ESPECÍFICO DO CHAT)
+   ======================================== */
+
+/* Aumenta a opacidade APENAS do chat no modo claro */
+.chatbot-container {
+    --glass-bg: rgba(255, 255, 255, 0.90); /* << Opacidade para modo claro */
+}
+
+/* Aumenta a opacidade APENAS do chat no modo escuro */
+[data-theme="dark"] .chatbot-container {
+    --glass-bg: rgba(26, 31, 46, 0.90); /* << Opacidade para modo escuro */
+}

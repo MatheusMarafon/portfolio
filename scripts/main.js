@@ -288,3 +288,42 @@ document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
     });
 })
 });
+// ========================================
+// 6. LÓGICA DO FORMULÁRIO DE CONTATO (AJAX)
+// ========================================
+
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Impede o redirecionamento da página
+
+        const form = e.target;
+        const data = new FormData(form);
+        const action = form.action;
+
+        // Mostra uma mensagem de "Enviando..."
+        formStatus.innerHTML = '<p class="text-info">Enviando sua mensagem...</p>';
+        
+        fetch(action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Sucesso no envio
+                formStatus.innerHTML = '<p class="text-success fw-bold">Mensagem enviada com sucesso! Obrigado pelo contato.</p>';
+                form.reset(); // Limpa os campos do formulário
+            } else {
+                // Erro no envio (se o Formspree der erro)
+                formStatus.innerHTML = '<p class="text-danger">Ocorreu um erro ao enviar a mensagem. Tente novamente.</p>';
+            }
+        }).catch(error => {
+            // Erro de rede ou outro problema
+            formStatus.innerHTML = '<p class="text-danger">Ocorreu um erro na requisição. Tente novamente mais tarde.</p>';
+        });
+    });
+}
