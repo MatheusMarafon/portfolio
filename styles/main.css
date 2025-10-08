@@ -974,6 +974,18 @@ footer {
 .bold-strong {
     font-weight: 500;
 }
+
+/* ========================================
+   17. AJUSTES PERSONALIZADOS
+   ======================================== */
+/* Espaçamento customizado para as colunas de skills */
+@media (min-width: 992px) {
+    .skills-column {
+        padding-left: 9rem;
+    }
+}
+
+
 /* ========================================
    18. AJUSTE DE OPACIDADE (ESPECÍFICO DO CHAT)
    ======================================== */
@@ -986,4 +998,98 @@ footer {
 /* Aumenta a opacidade APENAS do chat no modo escuro */
 [data-theme="dark"] .chatbot-container {
     --glass-bg: rgba(26, 31, 46, 0.90); /* << Opacidade para modo escuro */
+}
+
+/* ========================================
+   19. AJUSTE DE ALTURA PARA IMAGENS DO CARROSSEL (COM SCROLL)
+   ======================================== */
+
+/* Cria uma "caixa" com altura máxima e scroll vertical */
+.carousel-image-wrapper {
+    max-height: 500px; 
+    overflow-y: auto; 
+    border-radius: var(--bs-border-radius);
+}
+
+/* Garante que a imagem ocupe a largura total, mas a altura seja natural */
+.carousel-image-wrapper img {
+    width: 50%;
+    height: auto;
+}
+
+/* ========================================
+   20. AJUSTE DE ESPAÇAMENTO DAS SETAS DO CARROSSEL
+   ======================================== */
+
+/* Em telas grandes (desktop), afasta as setas das laterais da imagem */
+@media (min-width: 992px) {
+    .carousel-control-prev {
+        left: -67px; 
+    }
+
+    .carousel-control-next {
+        right: -67px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 1;
+    }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        opacity: 1;
+    }
+
+}
+
+/* ========================================
+   21. ESTILO PARA PROJETOS "EM BREVE"
+   ======================================== */
+
+.project-item.coming-soon .card {
+    position: relative; /* Necessário para o overlay funcionar */
+}
+
+/* Aplica um filtro para deixar o card menos chamativo */
+.project-item.coming-soon .card > * {
+    filter: grayscale(90%) blur(2px);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+/* Cria o overlay com o texto "EM BREVE" */
+.project-item.coming-soon .card::after {
+    content: 'EM DESENVOLVIMENTO';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(33, 37, 41, 0.6); /* Cor escura semi-transparente */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 2; /* Fica por cima de tudo dentro do card */
+    letter-spacing: 2px;
+    border-radius: var(--bs-card-border-radius); /* Usa o mesmo raio de borda do card */
+    cursor: not-allowed; /* O cursor indica que não é clicável */
+    opacity: 1; /* O texto não fica transparente */
+    transition: all 0.3s ease;
+}
+
+/* Desativa todos os cliques no card */
+.project-item.coming-soon .card a {
+    pointer-events: none;
+}
+
+/* Efeito de hover subtil (opcional) */
+.project-item.coming-soon .card:hover > * {
+    filter: grayscale(0%) blur(0);
+    opacity: 0.7;
+}
+.project-item.coming-soon .card:hover::after {
+    background-color: rgba(33, 37, 41, 0.4);
 }
