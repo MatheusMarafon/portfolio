@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="pythonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#306998;stop-opacity:1"/>
+                            <stop offset="50%" style="stop-color:#2b5b84;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#ffd43b;stop-opacity:1"/>
+                        </linearGradient>
+                        <radialGradient id="pythonGlow">
+                            <stop offset="0%" style="stop-color:#ffd43b;stop-opacity:0.8"/>
+                            <stop offset="100%" style="stop-color:#ffd43b;stop-opacity:0"/>
+                        </radialGradient>
+                    </defs>
+                    
+                    <rect width="1200" height="675" fill="url(#pythonGrad)"/>
+                    
+                    <!-- Floating circles -->
+                    <circle cx="100" cy="100" r="50" fill="url(#pythonGlow)" opacity="0.3">
+                        <animate attributeName="cy" values="100;80;100" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="1000" cy="500" r="70" fill="url(#pythonGlow)" opacity="0.3">
+                        <animate attributeName="cy" values="500;520;500" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <!-- Python logo inspired shape -->
+                    <g transform="translate(400, 200)">
+                        <path d="M200,0 Q250,-50 300,0 L300,100 Q250,150 200,100 Z" fill="#306998" opacity="0.8"/>
+                        <path d="M200,100 Q150,150 100,100 L100,0 Q150,-50 200,0 Z" fill="#ffd43b" opacity="0.8"/>
+                        <circle cx="170" cy="40" r="10" fill="#fff"/>
+                        <circle cx="230" cy="60" r="10" fill="#fff"/>
+                    </g>
+                    
+                    <!-- Code snippet -->
+                    <g transform="translate(150, 400)">
+                        <text x="0" y="0" font-family="Courier New, monospace" font-size="28" fill="#fff" opacity="0.9">
+                            <tspan x="0" dy="0">def create_magic():</tspan>
+                            <tspan x="40" dy="35">return "Python"</tspan>
+                        </text>
+                    </g>
+                    
+                    <text x="600" y="620" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#fff" text-anchor="middle">PYTHON PROJECTS</text>
+                </svg>

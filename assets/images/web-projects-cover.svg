@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="webGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <rect width="1200" height="675" fill="url(#webGrad)"/>
+                    
+                    <!-- Grid pattern -->
+                    <g opacity="0.1">
+                        <path d="M0 0 L1200 0 L1200 675 L0 675 Z" fill="none" stroke="#fff" stroke-width="1"/>
+                        <line x1="0" y1="135" x2="1200" y2="135" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="0" y1="270" x2="1200" y2="270" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="0" y1="405" x2="1200" y2="405" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="0" y1="540" x2="1200" y2="540" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="240" y1="0" x2="240" y2="675" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="480" y1="0" x2="480" y2="675" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="720" y1="0" x2="720" y2="675" stroke="#fff" stroke-width="0.5"/>
+                        <line x1="960" y1="0" x2="960" y2="675" stroke="#fff" stroke-width="0.5"/>
+                    </g>
+                    
+                    <!-- Browser window -->
+                    <g transform="translate(200, 150)">
+                        <rect width="800" height="400" rx="15" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                        <rect width="800" height="40" rx="15" fill="rgba(255,255,255,0.15)"/>
+                        <circle cx="25" cy="20" r="6" fill="#ff5f56"/>
+                        <circle cx="45" cy="20" r="6" fill="#ffbd2e"/>
+                        <circle cx="65" cy="20" r="6" fill="#27c93f"/>
+                        
+                        <!-- Code symbols -->
+                        <text x="100" y="90" font-family="monospace" font-size="40" fill="#fff" opacity="0.9" filter="url(#glow)">&lt;/&gt;</text>
+                        <text x="400" y="200" font-family="monospace" font-size="80" fill="#fff" opacity="0.8" filter="url(#glow)">{ }</text>
+                        <text x="600" y="320" font-family="monospace" font-size="35" fill="#fff" opacity="0.7">HTML</text>
+                        <text x="150" y="320" font-family="monospace" font-size="35" fill="#fff" opacity="0.7">CSS</text>
+                        <text x="350" y="350" font-family="monospace" font-size="35" fill="#fff" opacity="0.7">JS</text>
+                    </g>
+                    
+                    <text x="600" y="620" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#fff" text-anchor="middle">WEB PROJECTS</text>
+                </svg>

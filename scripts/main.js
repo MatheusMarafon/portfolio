@@ -250,30 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-
-    // ========================================
-    // 7. CONTADOR DE VISITANTES (LocalStorage)
-    // ========================================
-    function updateVisitorCounter() {
-        let visits = parseInt(localStorage.getItem('portfolio_visits') || '0');
-        visits++;
-        localStorage.setItem('portfolio_visits', visits);
-        
-        const counterEl = document.getElementById('visitor-counter');
-        if (counterEl) {
-            counterEl.textContent = visits;
-        }
-        
-        // Mensagem especial para visitantes recorrentes
-        if (visits > 1) {
-            setTimeout(() => {
-                showToast(`Bem-vindo de volta! Esta é sua visita #${visits} 🎉`, 'success');
-            }, 2000);
-        }
-    }
-
-    updateVisitorCounter();
-
     // ========================================
     // 8. COPIAR EMAIL/LINKS COM UM CLIQUE
     // ========================================
@@ -731,27 +707,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // 22. CONSOLE EASTER EGG
-    // ========================================
-    console.log('%c🚀 Bem-vindo ao Portfólio de Matheus!', 'color: #00ff00; font-size: 20px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,255,0,0.3);');
-    console.log('%c💡 Dica: Tente digitar o Konami Code!', 'color: #ffaa00; font-size: 14px;');
-    console.log('%c⌨️  Atalhos: CTRL+K (Chatbot) | CTRL+D (Dark Mode)', 'color: #00aaff; font-size: 12px;');
-
-    // ========================================
-    // 23. TEMPO GASTO NA PÁGINA
-    // ========================================
-    let timeSpent = 0;
-    setInterval(() => {
-        timeSpent++;
-        if (timeSpent === 30) {
-            showToast('Você está aqui há 30 segundos! Obrigado pelo interesse 😊', 'info');
-        }
-        if (timeSpent === 120) {
-            showToast('2 minutos explorando! Gostaria de entrar em contato? 📬', 'success');
-        }
-    }, 1000);
-
-    // ========================================
     // 24. SISTEMA DE CONQUISTAS (ACHIEVEMENTS)
     // ========================================
     const achievements = {
@@ -1120,29 +1075,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     presentationMode.init();
 
-    // ========================================
-    // 34. MENSAGENS MOTIVACIONAIS ALEATÓRIAS
-    // ========================================
-    const motivationalMessages = [
-        '💪 Continue explorando! Há muito mais para descobrir.',
-        '🌟 Você está no caminho certo!',
-        '🚀 Que tal enviar uma mensagem?',
-        '👨‍💻 Gostou do que viu? Vamos trabalhar juntos!',
-        '🎯 Explore os projetos e veja o que posso fazer!',
-        '💡 Cada projeto conta uma história.',
-        '✨ Obrigado por dedicar seu tempo aqui!',
-        '🔥 Este portfólio foi feito com muito carinho!',
-        '🎨 Design e código trabalhando em harmonia.',
-        '⚡ Performance e estilo em cada detalhe.'
-    ];
-    
-    function showRandomMotivation() {
-        const message = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)];
-        showToast(message, 'info');
-    }
-    
-    // Mostra mensagem motivacional a cada 2 minutos
-    setInterval(showRandomMotivation, 120000);
 
     // ========================================
     // 35. DETECTOR DE INATIVIDADE
@@ -1512,9 +1444,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     scrollMemory.init();
 
-    // ========================================
+    // ===============================================
     // 50. MODO CINEMA (Escurece Tudo Exceto Conteúdo)
-    // ========================================
+    // ===============================================
     const cinemaMode = {
         active: false,
         overlay: null,
@@ -1627,7 +1559,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const smartSuggestions = {
         suggestions: [
             { condition: () => !achievements.data.chatter, message: '💬 Que tal conversar com o chatbot? (CTRL+K)', action: () => chatbot.toggleWindow() },
-            { condition: () => favorites.list.size === 0, message: '❤️ Marque seus projetos favoritos!', action: null },
             { condition: () => !localStorage.getItem('theme'), message: '🌙 Experimente o modo escuro! (CTRL+D)', action: () => theme.toggle() },
             { condition: () => sectionTracker.visited.size < 3, message: '🔍 Explore mais seções do portfólio!', action: null },
             { condition: () => !achievements.data.form_sender, message: '📧 Envie uma mensagem de contato!', action: () => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' }) }
@@ -1711,36 +1642,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     connectionMonitor.init();
 
-    // ========================================
-    // 57. MULTI-IDIOMA BÁSICO (PT/EN)
-    // ========================================
-    const i18n = {
-        current: localStorage.getItem('language') || 'pt',
-        
-        translations: {
-            pt: {
-                welcome: 'Bem-vindo!',
-                loading: 'Carregando...',
-                darkMode: 'Modo Escuro',
-                lightMode: 'Modo Claro'
-            },
-            en: {
-                welcome: 'Welcome!',
-                loading: 'Loading...',
-                darkMode: 'Dark Mode',
-                lightMode: 'Light Mode'
-            }
-        },
-        
-        toggle() {
-            this.current = this.current === 'pt' ? 'en' : 'pt';
-            localStorage.setItem('language', this.current);
-            showToast(`Language changed to ${this.current.toUpperCase()}`, 'info');
-            // Aqui você implementaria a troca de textos na página
-        }
-    };
-    
-    window.toggleLanguage = () => i18n.toggle();
 
     // ========================================
     // 58. SCREENSHOT DA PÁGINA
@@ -1754,32 +1655,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.takeScreenshot = () => screenshotTool.capture();
 
-    // ========================================
-    // 59. INTEGRAÇÃO COM CALENDAR (Agendar Reunião)
-    // ========================================
-    const calendarIntegration = {
-        createEvent() {
-            const title = 'Reunião - Portfolio Matheus';
-            const description = 'Discussão sobre oportunidades de desenvolvimento';
-            const location = 'Online';
-            
-            // Google Calendar URL
-            const startDate = new Date();
-            startDate.setDate(startDate.getDate() + 7); // Próxima semana
-            const endDate = new Date(startDate.getTime() + 60 * 60 * 1000); // 1 hora
-            
-            const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}&dates=${this.formatDate(startDate)}/${this.formatDate(endDate)}`;
-            
-            window.open(googleCalUrl, '_blank');
-            showToast('📅 Abrindo Google Calendar...', 'info');
-        },
-        
-        formatDate(date) {
-            return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-        }
-    };
-    
-    window.scheduleMeteing = () => calendarIntegration.createEvent();
 
     // ========================================
     // 60. PAINEL DE CONTROLE FLUTUANTE
@@ -1816,6 +1691,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     controlPanel.init();
+
+    // ================================
+    // LÓGICA DO CURSOR PERSONALIZADO
+    // ================================
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorCircle = document.getElementById('cursor-circle');
+
+    // Atualiza a posição do cursor a cada movimento do mouse
+    window.addEventListener('mousemove', e => {
+        if (cursorDot && cursorCircle) {
+            cursorDot.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+
+            cursorCircle.style.top = e.clientY + 'px';
+            cursorCircle.style.left = e.clientX +'px';
+
+        }
+    });
+
+    // Adiciona o efeito de 'hover' a todos os elementos clicáveis
+    const clickableElements = document.querySelectorAll('a, button, .filter-btn');
+
+    clickableElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            if (cursorDot && cursorCircle) {
+                cursorDot.classList.add('hover');
+                cursorCircle.classList.add('hover');
+            }
+    });
+    el.addEventListener('mouseleave', () => {
+        if (cursorDot && cursorCircle) {
+            cursorDot.classList.remove('hover');
+            cursorCircle.classList.remove('hover');
+        }
+        })
+    });
 
 
     // ========================================
@@ -1861,3 +1772,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%c🏆 Digite showStats() para ver suas estatísticas', 'color: #00aaff; font-size: 14px;');
     console.log('%c⚡ CTRL+SHIFT+P para Painel de Controle', 'color: #ff6600; font-size: 14px;');
 });
+

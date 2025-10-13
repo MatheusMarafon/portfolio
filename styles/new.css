@@ -12,6 +12,9 @@
     --success-color: #198754;
     --info-color: #495057;
     --info-hover: #6c757d;
+    --git-color: #0efcfc;
+    --text-color: #fff
+    --text-muted-color: #6c757d;
     
     /* Transições e Efeitos */
     --transition-speed: 0.3s;
@@ -45,7 +48,7 @@
     --secondary-dark: #151923;
     --dark-color: #f8f9fa;
     --light-color: #0a0e17;
-    --info-color: #60a5fa;
+    --info-color: #ffffff;
     --info-hover: #93c5fd;
     
     /* Glass Morphism Dark */
@@ -254,7 +257,7 @@ img {
     transition: all var(--transition-speed) var(--transition-smooth);
     box-shadow: var(--shadow-md);
     will-change: transform;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Back to Top Aprimorado */
@@ -2679,13 +2682,6 @@ img[loading="lazy"].loaded {
     animation: loadingDot 1.4s infinite ease-in-out both;
 }
 
-.loading-dots span:nth-child(1) {
-    animation-delay: -0.32s;
-}
-
-.loading-dots span:nth-child(2) {
-    animation-delay: -0.16s;
-}
 
 @keyframes loadingDot {
     0%, 80%, 100% {
@@ -2921,14 +2917,6 @@ img[data-src].loaded {
     animation: typing 1.4s infinite;
 }
 
-.typing-indicator span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.typing-indicator span:nth-child(3) {
-
-    animation-delay: 0.4s;
-}
 
 @keyframes typing {
     0%, 60%, 100% { transform: translateY(0); }
@@ -3199,5 +3187,247 @@ body.slow-connection [data-aos] {
     to {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
+    }
+}
+#projetos .card-text,
+.project-details .lead {
+    color: var(--text-color) !important;
+}
+
+/* Badges - Modo Claro */
+:root #projetos .badge {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+/* Badges - Modo Escuro */
+[data-theme="dark"] #projetos .badge {
+    background-color: #1a1f2e;
+    color: #60a5fa;
+}
+
+/* Botão Código-Fonte - Modo Escuro */
+[data-theme="dark"] .btn-outline-dark {
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .btn-outline-dark:hover {
+    background-color: #60a5fa;
+    color: #0a0e17;
+}
+
+.project-showcase {
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+
+ #jornada,
+ .text-muted {
+    color: var(--text-muted) !important;
+ }
+
+ /* Bolinha de notificação no botão do chatbot */
+ .chatbot-toggle {
+    position: relative;
+ }
+ .chatbot-toggle::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border: 2px solid white;
+    border: 50%;
+    display: none;
+ }
+ .chatbot-toggle.has-notification::before {
+    display: block;
+ }
+/* ==================================== */
+/* Estilos para a Linha do Tempo Visual */
+/* ==================================== */
+#jornada {
+    background-color: var(--bg-secondary-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.timeline-v2 {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0; /* Espaçamento para a linha estender */
+}
+
+/* A linha central vertical com degradê */
+.timeline-v2::before {
+    content: '';
+    position: absolute;
+    margin: 130px;
+    width: 3px;
+    left: 33%;
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%,
+        #e9ecef 5%,
+        #e9ecef 95%,
+        transparent 100%
+    );
+
+    /* ============================================ */
+    /* AJUSTE O TAMANHO DA LINHA AQUI */
+    top: 0;
+    bottom: -1900px; /* Aumente ou reduza este valor p/ controlar o fim da linha */
+    /* ============================================ */
+}
+
+/* Cada item/ano na timeline */
+.timeline-item-v2 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 3rem; /* Espaçamento entre os itens */
+}
+
+/* Estilização dos anos */
+.timeline-year-25-1{
+    transform: translateX(1100%);
+    margin-top: 27.5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+.timeline-year-25-2 {
+    transform: translateX(1100%);
+    margin-top: 27.5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+.timeline-year-24{
+    transform: translateX(1100%);
+    margin-top: 27.5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+.timeline-year-23{
+    transform: translateX(1100%);
+    margin-top: 27.5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+.timeline-year-22 {
+    transform: translateX(1100%);
+    margin-top: 27.5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+
+/* O cartão de conteúdo */
+.timeline-content-v2 {
+    width: 45%;
+    background: var(--bg-color);
+    border: none;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: all var(--transition-speed) ease;
+}
+
+/* O ícone na linha */
+.timeline-icon {
+    position: absolute;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border: 3px solid var(--bg-secondary-color);
+    margin-left: -60px; 
+}
+
+/* Estilos internos do cartão */
+.timeline-content-v2 h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+}
+.timeline-content-v2 h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted-color);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+.timeline-content-v2 p {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+.timeline-content-v2 ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+.timeline-content-v2 ul li {
+    padding: 1rem 0;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-content-v2 ul li .fas {
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .timeline-v2::before {
+        left: 20px;
+    }
+    .timeline-item-v2{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .timeline-year {
+        left: 1%;
+        transform: translateX(-50%)   
+    }
+    .timeline-content-v2{
+        width: 100%;
+        margin-left: 0;
+        padding-left: 50px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+    .timeline-icon{
+        left: 0 !important;
+        transform: translateX(0) !important;
+        top: -5px;
+    }
+    .timeline-content-v2 ul li {
+        padding: 0.75rem 0;
     }
 }

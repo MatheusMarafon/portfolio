@@ -3,42 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus | Portfólio de TI</title>
+    <title>Matheus Marafon | Desenvolvedor Python & Web</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-          xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
     
     <link rel="stylesheet" href="./styles/new.css"> 
+
+
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="50">
-
-    <div class="loading-screen">
-        <div class="loader"></div>
-    </div>
+    <div class="loading-screen"><div class="loader"></div></div>
     <div class="scroll-progress"></div>
-    <div class="custom-cursor"></div>
     
     <div id="auxiliary-buttons">
-        
-        <button class="theme-toggle" id="themeToggle" aria-label="Alternar Modo Escuro">
-            <span id="themeIcon">🌙</span>
-        </button>
-
-        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir Chat">
-            <i class="fas fa-comment-dots"></i>
-        </button>
-        
-        <button class="back-to-top" id="backToTop" aria-label="Voltar ao Topo">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar Modo Escuro"><span id="themeIcon">🌙</span></button>
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir Chat"><i class="fas fa-comment-dots"></i></button>
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao Topo"><i class="fas fa-arrow-up"></i></button>
     </div>
 
     <header>
-        <!---- NAVBAR ---->
         <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#hero">Matheus Ribeiro Marafon</a>
@@ -55,15 +44,13 @@
             </div>
         </nav>
     </header>
-    <!---- Corpo Principal do Site ---->
+    
     <main>
         <section id="hero" class="d-flex align-items-center" style="min-height: 100vh;">
-            <div id="particles-js"></div>
-            <div class="hero-parallax"></div>
             <div class="container text-center" data-aos="fade-zoom-in" data-aos-duration="1000">
-                <h1 class="display-3 fw-bolder text-white">Matheus Marafon</h1>
-                <p class="lead mb-4 typed-text">
-                    <span id="typed"></span>
+                <h1 class="display-3 fw-bolder text-white">Matheus Ribeiro Marafon</h1>
+                <p class="lead mb-4 typed-text text-white-50" style="min-height: 50px;">
+                    <span id="typed">Desenvolvedor Python focado em soluções web e automação.</span>
                 </p>
                 <a href="#projetos" class="btn btn-primary btn-lg shadow-lg">Ver Projetos</a>
                 <a href="#contato" class="btn btn-outline-light btn-lg ms-3">Fale Comigo</a>
@@ -79,194 +66,271 @@
                     </div>
                     <div class="col-md-4 stat-item">
                         <span class="stat-number" data-target="1">0</span>
-                        <span class="stat-label">Ano no mercado (Web/Python)</span>
+                        <span class="stat-label">Ano de Experiência Prática</span>
                     </div>
                     <div class="col-md-4 stat-item">
                         <span class="stat-number" data-target="4">0</span>
-                        <span class="stat-label">Anos de Formação em TI</span>
+                        <span class="stat-label">Anos de Dedicação à TI</span>
                     </div>
                 </div>
             </div>
         </div>
-        <!---- Sobre Mim e Habilidades ---->
+        
         <section id="sobre" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-5" data-aos="fade-down">Sobre Mim e Habilidades</h2>
-                
-                <div class="row align-items-start">
+                <div class="row align-items-center">
                     <div class="col-lg-6 mb-5" data-aos="fade-right">
-                        <p class="lead">Olá! Sou um entusiasta de TI em <span class="bold-strong">Estágio</span>, focado em <span class="bold-strong">Desenvolvimento Web</span> e <span class="bold-strong">Automação</span>. Estou no 4º ano da faculdade e tenho 6 meses de experiência prática em produção.</p>
-                        <p>Minha missão é transformar desafios complexos em soluções digitais elegantes e performáticas, aplicando sempre as melhores práticas de desenvolvimento.</p>
-
-                        <h4 class="mt-4 mb-3">Currículo</h4>
-                        <a href="./assets/curriculo-matheus-marafon.pdf" class="btn btn-primary shadow-sm" target="_blank" download>
+                        <p class="lead">Olá! Sou Matheus, desenvolvedor com foco em Python e tecnologias Web. Atualmente no 4º ano de Análise e Desenvolvimento de Sistemas, minha paixão é transformar desafios complexos em soluções digitais elegantes e performáticas.</p>
+                        <p>Com experiência prática em automação de processos e desenvolvimento full-stack, busco constantemente aprender e aplicar as melhores práticas para entregar resultados de alto impacto.</p>
+                        <a href="./assets/curriculo-matheus-marafon.pdf" class="btn btn-primary shadow-sm mt-4" target="_blank" download>
                             <i class="fas fa-download me-2"></i> Baixar Currículo (PDF)
                         </a>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up">
-                        <h4 class="mb-3 text-primary">Hard Skills</h4>
-                        <p class="mb-2 fw-bold">Stack Principal:</p>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h4 class="mb-3 text-primary">Principais Habilidades</h4>
                         <div class="skill-item">
-                            <div class="skill-name"><span>Python</span><span>Intermediário</span></div>
+                            <div class="skill-name"><span>Python (Django, Automação)</span></div>
                             <div class="skill-bar"><div class="skill-progress" style="--skill-width: 80%"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-name"><span>JavaScript (ES6+)</span><span>Intermediário</span></div>
+                            <div class="skill-name"><span>JavaScript (ES6+)</span></div>
                             <div class="skill-bar"><div class="skill-progress" style="--skill-width: 75%"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-name"><span>HTML & CSS</span><span>Avançado</span></div>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%"></div></div>
+                            <div class="skill-name"><span>HTML & CSS (Bootstrap)</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 88%"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-name"><span>Automação & Scripts</span><span>Intermediário</span></div>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 82%"></div></div>
+                            <div class="skill-name"><span>SQL & Bancos de Dados</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name"><span>Integração de APIs</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="--skill-width: 40%"></div></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="col-md-6 col-lg-3 mb-4 soft-skills-spacer" data-aos="fade-up" data-aos-delay="200">
-                        <h4 class="mb-3 text-primary">Soft Skills</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Resolução de Problemas</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Pensamento Crítico</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Colaboração</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Comunicação Técnica</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Aprendizado Rápido</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Receptividade a Feedback</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Proatividade</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-primary"></i> Atenção aos Detalhes</li>
+        <section id="jornada" class="py-5">
+            <div class="timeline-v2"></div>
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-down">Minha Trajetória</h2>
+
+                <div class="timeline-item-v2">
+                    <div class="timeline-item-v2" data-aos="fade-up">
+                        <div class="timeline-year-25-1">2025</div>
+                        <div class="timeline-content-v2">
+                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h4 class="fw-bold">Reta Final da Graduação & TCC</h4>
+                            <h5 class="text-muted">Projetos Web e Mobile (VeTech)</h5>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 1° Semestre: Desenvolvimento do sistema web para gestão de clínicas veterinárias</li>
+                                <li><i class="fas fa-check"></i> 2° Semestre: Finalização do TCC com criação do aplicativo mobile do sistema VeTech</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-v2" data-aos="fade-up">
+                    <div class="timeline-year-25-2">2025</div>
+                    <div class="timeline-content-v2">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <h4 class="fw-bold">Início da Experiência Profissional</h4>
+                        <h5 class="text-muted">Estágio (Foco em Automação e Web)</h5>
+                        <ul>
+                            <li><i class="fas fa-cogs"></i> Aplicação de conhecimentos para resolver problemas reais com automação (VBA e Python).</li>
+                            <li><i class="fas fa-desktop"></i> Desenvolvimento de Landing Pages e aplicações para aprimoramento técnico.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item-v2" data-aos="fade-up">
+                    <div class="timeline-year-24">2024</div>
+                    <div class="timeline-content-v2">
+                        <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="fw-bold">Projetos Acadêmicos com IA</h4>
+                        <h5 class="text-muted">Explorando Tecnologias Emergentes</h5>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Criação de um SaaS para vendas de placas solares.</li>
+                            <li><i class="fas fa-check"></i> Destaque do projeto: implementação de uma IA para recomendar ao cliente qual o melhor opção para implementar placar solar.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item-v2" data-aos="fade-up">
+                    <div class="timeline-year-23">2023</div>
+                    <div class="timeline-content-v2">
+                        <div class="timeline-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4 class="fw-bold">Desenvolvimento Mobile focado em UX</h4>
+                        <h5 class="text-muted">Solucionando Problemas Reais</h5>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Desenvolvimento de um aplicativo mobile para agendamento emergencial de dentistas.</li>
+                            <li><i class="fas fa-check"></i> Funcionalidades: geolocalizção para encontrar dentistas próximos e agendamentos em tempo real.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item-v2" data-aos="fade-up">
+                    <div class="timeline-year-22">2022</div>
+                    <div class="timeline-content-v2">
+                        <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                        <h4 class="fw-bold">Fundamentos e Primeiros Projetos Web</h4>
+                        <h5 class="text-muted">Início da Graduação na PUCC</h5>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 1° Semestre: Criação de uma calculadora de IMC com sugestões de alimentos.</li>
+                            <li><i class="fas fa-check"></i> 2° Semestre: Desenvolvimento de um sistema web para compra de bilheres urbanos com diferentes planos.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <!---- Card dos Projetos ---->
+        
         <section id="projetos" class="py-5">
             <div class="container">
-                <h2 class="text-center mb-3" data-aos="fade-down">Meus Principais Projetos</h2>
-                
-                <div class="filter-buttons" data-aos="fade-up">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="automation">Automação</button>
-                    <button class="filter-btn" data-filter="python">Python/VBA</button>
-                </div>
-                
-                <div class="row" id="projectsContainer">
-                    <!-- Projeto 1 -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web python" data-aos="fade-up">
-                        <div class="card h-100 shadow-sm">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#projeto1Modal">
-                                <img src="./assets/images/capa-p1.png" class="card-img-top" alt="Capa do App de Estudos">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold text-primary">Projeto 1: App de Estudos Interativo</h5>
-                                <p class="card-text flex-grow-1">Um ambiente de estudo técnico desenvolvido proativamente em Django e Bootstrap 4. O projeto serviu como uma sandbox para aprofundar conhecimentos em frameworks e para a integração prática com APIs (RD Station, D4Sign), simulando os desafios de um ambiente de produção real.</p>
-                                <div class="mt-auto pt-3 text-center">
-                                    <a href="https://github.com/MatheusMarafon/projeto-estudo" class="btn btn-primary" target="_blank">Ver Código-Fonte</a>
-                                </div>
-                            </div>
-                        </div>
+                <h2 class="text-center" data-aos="fade-down" style="margin-bottom: 6rem;">Projetos em Destaque</h2>
+
+                <div class="row align-items-center project-showcase" data-aos="fade-up">
+                    <div class="col-lg-6">
+                        <a href="https://projeto-estudo.onrender.com/" target="_blank">
+                            <img src="./assets/images/web-projects-cover.svg" class="img-fluid rounded shadow-lg project-image" alt="App de Estudos Interativo">
+                        </a>
                     </div>
-                    <!-- Projeto 2 (Em Breve) -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="automation python" data-aos="fade-up">
-                        <div class="card h-100 shadow-sm">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#projeto2Modal">
-                                <img src="./assets/images/capa-p2.png" class="card-img-top" alt="Capa do Script de Automação">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold">Projeto 2: Script de Automação</h5>
-                                <p class="card-text flex-grow-1">Uma robusta automação em VBA para Microsoft Access, projetada para otimizar e manter bancos de dados de backend. O script executa tarefas agendadas de forma segura, incluindo backups rotativos, limpeza de tabelas e logging detalhado de todas as operações para garantir integridade dos dados.</p>
-                                <div class="mt-auto pt-3 text-center">
-                                    <a href="https://github.com/MatheusMarafon/automacao-vba" class="btn btn-primary" target="_blank">Ver Código-Fonte</a>
-                                </div>
+                    <div class="col-lg-6">
+                        <div class="project-details">
+                            <h3 class="fw-bold">App de Estudos Interativo</h3>
+                            <p class="lead text-muted">Uma aplicação web full-stack que gera flashcards dinamicamente usando a API do Google Gemini para criar uma experiência de estudo personalizada e eficaz.</p>
+                            <div class="tech-tags my-3">
+                                <span class="badge">Python</span><span class="badge">Django</span><span class="badge">Bootstrap</span><span class="badge">JavaScript</span><span class="badge">API</span>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Projeto 3 -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web" data-aos="fade-up">
-                        <div class="card h-100 shadow-sm">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#projeto3Modal">
-                                <img src="./assets/images/capa-p3.png" class="card-img-top" alt="Capa da Landing Page Moderna">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold text-primary">Projeto 3: Landing Page Moderna</h5>
-                                <p class="card-text flex-grow-1">Desenvolvimento de uma nova extensão para a plataforma oficial da empresa, criando uma landing page moderna e totalmente responsiva. O projeto foi construído com HTML, CSS e JavaScript, utilizando Bootstrap 5 para garantir uma experiência de utilizador fluida e alinhada com a identidade visual da marca.</p>
-                                <div class="mt-auto pt-3 text-center">
-                                    <a href="https://github.com/MatheusMarafon/sistema-gestao-refatorado" class="btn btn-primary" target="_blank">Ver Código-Fonte</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Projeto 4 (Em Breve) -->
-                     <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="python automation" data-aos="fade-up">
-                        <div class="card h-100 shadow-sm">
-                             <a href="#" data-bs-toggle="modal" data-bs-target="#projeto4Modal">
-                                <img src="./assets/images/capa-p4.png" class="card-img-top" alt="Capa do Bot de Dados">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold">Projeto 4: Script Automação Faturas Python</h5>
-                                <p class="card-text flex-grow-1">Uma solução de automação desenvolvida em Python para otimizar o processo de gestão de faturas. O script extrai de forma inteligente os dados-chave de faturas de uma distribuidora e os consolida num relatório estruturado em Excel, eliminando a entrada de dados manual, economizando tempo e reduzindo a zero a possibilidade de erros operacionais.</p>
-                                <div class="mt-auto pt-3 text-center">
-                                    <a href="https://github.com/MatheusMarafon/automacao-faturas" class="btn btn-primary" target="_blank">Ver Código-Fonte</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Projeto 5 (Em Breve) -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="web" data-aos="fade-up">
-                        <div class="card h-100 shadow-sm">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#projeto5Modal">
-                                <img src="./assets/images/capa-p5.png" class="card-img-top" alt="Capa do Dashboard Interativo">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold text-primary">Projeto 5: Script Automação CCEE</h5>
-                                <p class="card-text flex-grow-1">Um script de automação focado em web scraping para a coleta de dados públicos. A ferramenta navega autonomamente pelo site da CCEE (Câmara de Comercialização de Energia Elétrica) para extrair informações de Representantes Legais, organizando e salvando os dados de forma estrututrada numa planilha Excel para fácil consulta e utilização.</p>
-                                <div class="mt-auto pt-3 text-center">
-                                    <a href="https://github.com/MatheusMarafon/bot-ccee" class="btn btn-primary" target="_blank">Ver Código-Fonte</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Projeto 6 (Em Breve) -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-item coming-soon" data-category="python" data-aos="fade-up">
-                        <div class="card h-100 shadow-sm">
-                             <a href="#" data-bs-toggle="modal" data-bs-target="#projeto6Modal">
-                                <img src="./assets/images/embreve.PNG" class="card-img-top" alt="Capa do Gerenciador de Tarefas">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold">Projeto 6: VeTech</h5>
-                                <p class="card-text flex-grow-1">Descrição do Sistema Web e Mobile 'VeTech'.</p>
-                                <div class="mt-auto pt-3 text-center">
-                                    <a href="https://github.com/MatheusMarafon/gerenciador-tarefas" class="btn btn-primary" target="_blank">Ver Código-Fonte</a>
-                                </div>
+                            <div class="project-links mt-4">
+                                <a href="https://projeto-estudo.onrender.com/" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Online</a>
+                                <a href="https://github.com/MatheusMarafon/projeto-estudo" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i>Código-Fonte</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row align-items-center project-showcase" data-aos="fade-up">
+                    <div class="col-lg-6 order-lg-2">
+                        <a href="https://github.com/MatheusMarafon/automacao-vba" target="_blank">
+                            <img src="./assets/images/vba-projects-cover.svg" class="img-fluid rounded shadow-lg project-image" alt="Automação de Manutenção VBA">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="project-details">
+                            <h3 class="fw-bold">Automação de Manutenção (VBA)</h3>
+                            <p class="lead text-muted">Script robusto em VBA para MS Access que automatiza tarefas críticas de manutenção de banco de dados, incluindo backups, otimização e controle de acesso de usuários.</p>
+                            <div class="tech-tags my-3">
+                                <span class="badge">VBA</span><span class="badge">MS Access</span><span class="badge">SQL</span><span class="badge">DAO/ADO</span>
+                            </div>
+                            <div class="project-links mt-4">
+                                <a href="url_projeto_vba" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Online</a>
+                                <a href="https://github.com/MatheusMarafon/automacao-vba" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i>Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center project-showcase" data-aos="fade-up">
+                    <div class="col-lg-6">
+                        <a href="https://github.com/MatheusMarafon/sistema-gestao-refatorado" target="_blank">
+                            <img src="./assets/images/web-projects-cover.svg" class="img-fluid rounded shadow-lg project-image" alt="Landing Page Moderna">
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-details">
+                            <h3 class="fw-bold">Landing Page & Simulador</h3>
+                            <p class="lead text-muted">Desenvolvimento de uma extensão para a plataforma da empresa, com uma landing page moderna e um simulador de custos integrado para captura e qualificação de leads.</p>
+                            <div class="tech-tags my-3">
+                                <span class="badge">HTML5</span><span class="badge">CSS3</span><span class="badge">JavaScript</span><span class="badge">Bootstrap 5</span>
+                            </div>
+                            <div class="project-links mt-4">
+                                <a href="url_projeto_leads" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Online</a>
+                                <a href="https://github.com/MatheusMarafon/sistema-gestao-refatorado" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i>Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center project-showcase" data-aos="fade-up">
+                    <div class="col-lg-6 order-lg-2">
+                         <a href="https://github.com/MatheusMarafon/automacao-faturas" target="_blank">
+                            <img src="assets/images/python-projects-cover.svg" class="img-fluid rounded shadow-lg project-image" alt="Script de Automação de Faturas">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="project-details">
+                            <h3 class="fw-bold">Script de Extração de Faturas</h3>
+                            <p class="lead text-muted">Solução em Python para extrair dados de faturas em PDF e consolidá-los em um relatório Excel, eliminando horas de entrada de dados manual e reduzindo erros.</p>
+                            <div class="tech-tags my-3">
+                                <span class="badge">Python</span><span class="badge">Pandas</span><span class="badge">PDF Parsing</span>
+                            </div>
+                            <div class="project-links mt-4">
+                                <a href="url_projeto_faturas" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Online</a>
+                               <a href="https://github.com/MatheusMarafon/automacao-faturas" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i>Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row align-items-center project-showcase" data-aos="fade-up">
+                    <div class="col-lg-6">
+                        <a href="https://github.com/MatheusMarafon/bot-ccee" target="_blank">
+                            <img src="assets/images/python-projects-cover.svg" class="img-fluid rounded shadow-lg project-image" alt="Web Scraping CCEE">
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-details">
+                            <h3 class="fw-bold">Web Scraping CCEE</h3>
+                            <p class="lead text-muted">Script de web scraping em Python para coletar e estruturar dados públicos de Representantes Legais do site da CCEE de forma automatizada.</p>
+                            <div class="tech-tags my-3">
+                                <span class="badge">Python</span><span class="badge">Selenium</span><span class="badge">Web Scraping</span>
+                            </div>
+                            <div class="project-links mt-4">
+                                <a href="url_projeto_ccee" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Online</a>
+                                <a href="https://github.com/MatheusMarafon/bot-ccee" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i>Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center project-showcase" data-aos="fade-up">
+                    <div class="col-lg-6 order-lg-2">
+                        <a href="https://github.com/MatheusMarafon/vetech" target="_blank">
+                            <img src="assets/images/web-mobile-projects-cover.svg" class="img-fluid rounded shadow-lg project-image" alt="Sistema VeTech">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="project-details">
+                            <h3 class="fw-bold">VeTech - Gestão Veterinária</h3>
+                            <p class="lead text-muted">Sistema Web e Mobile (TCC) para gestão de clínicas veterinárias, incluindo agendamentos, prontuários eletrônicos e controle de estoque.</p>
+                            <div class="tech-tags my-3">
+                                <span class="badge">Python</span><span class="badge">Django REST</span><span class="badge">React Native</span>
+                            </div>
+                            <div class="project-links mt-4">
+                                <a href="url_projeto_mobile" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Mobile</a>
+                                <a href="url_projeto_vetech_web" target="_blank" class="btn btn-primary me-2"><i class="fas fa-external-link-alt me-2"></i>Ver Web</a>
+                               <a href="https://github.com/MatheusMarafon/vetech" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i>Código-Fonte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
-        <!---- Formulário de Contato ---->
+        
         <section id="contato" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-4" data-aos="fade-up">Entre em Contato</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-                        <p class="text-center lead">Prefere um contato direto? Preencha o formulário ou use os links abaixo:</p>
-                        <form id="contact-form" action="https://formspree.io/f/xrbyayjl" method="POST"> 
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Seu Email:</label>
-                                <input type="email" class="form-control" id="email" name="_replyto" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Mensagem:</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                            </div>
+                        <p class="text-center lead">Tem uma pergunta ou uma oportunidade? Adoraria conversar. Preencha o formulário ou use os links abaixo.</p>
+                        <form id="contact-form" action="https://formspree.io/f/xrbyayjl" method="POST">
+                            <div class="mb-3"><label for="name" class="form-label">Nome:</label><input type="text" class="form-control" id="name" name="name" required></div>
+                            <div class="mb-3"><label for="email" class="form-label">Seu Email:</label><input type="email" class="form-control" id="email" name="_replyto" required></div>
+                            <div class="mb-3"><label for="message" class="form-label">Mensagem:</label><textarea class="form-control" id="message" name="message" rows="4" required></textarea></div>
                             <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensagem</button>
                             <div id="form-status" class="mt-3 text-center"></div>
                         </form>
@@ -275,299 +339,28 @@
             </div>
         </section>
     </main>
-    <!---- Rodapé ---->
+
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
             <div class="social-links mb-3">
-                <a href="https://github.com/MatheusMarafon" target="_blank" class="mx-2 footer-icon" aria-label="GitHub">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/matheus-ribeiro-marafon-220953286/" target="_blank" class="mx-2 footer-icon" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in fa-2x"></i>
-                </a>
-                <a href="#contato" class="mx-2 footer-icon" aria-label="Email">
-                    <i class="fas fa-envelope fa-2x"></i>
-                </a>
+                <a href="https://github.com/MatheusMarafon" target="_blank" class="mx-2 footer-icon" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/matheus-ribeiro-marafon-220953286/" target="_blank" class="mx-2 footer-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                <a href="#contato" class="mx-2 footer-icon" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
             </div>
-            
-            <p class="mb-2">
-                <i class="fas fa-map-marker-alt me-2"></i> 
-                Localização: Campinas, São Paulo, Brasil
-            </p>
-
+            <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Campinas, São Paulo, Brasil</p>
             <p class="mb-0">&copy; <span id="currentYear"></span> Matheus Ribeiro Marafon. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <div class="chatbot-container" id="chatbotContainer">
-        <div class="chatbot-header">
-            <h5>MatheusBot</h5>
-        </div>
-        <div class="chatbot-messages" id="chatMessages">
-        </div>
-        <div class="chatbot-input-area">
-            <div id="chatOptions" class="d-grid gap-2 w-100">
-            </div>
-        </div>
+        <div class="chatbot-header"><h5>MatheusBot</h5></div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chatbot-input-area"><div id="chatOptions" class="d-grid gap-2 w-100"></div></div>
     </div>
     
-    <!-- =================================================== -->
-    <!-- MODALS DOS PROJETOS -->
-    <!-- =================================================== -->
-
-    <!-- Modal Projeto 1: App de Estudos -->
-    <div class="modal fade" id="projeto1Modal" tabindex="-1" aria-labelledby="projeto1ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projeto1ModalLabel">Projeto: App de Estudos Interativo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="carouselProjeto1" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="6000">
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/home-p1.png" class="d-block w-100" alt="Tela principal do App de Estudos"> 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/django-p1.png" class="d-block w-100" alt="Página dedicada ao estudo do framework Django">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/bs-p1.png" class="d-block w-100" alt="Página dedicada ao estudo do framework Boostrap 4">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/crm-p1.png" class="d-block w-100" alt="Página dedicada ao estudo da API do CRM da RD-Station"> 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/d4-p1.png" class="d-block w-100" alt="Página dedicada ao estudo da API do D4Sign">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/atv-fp-p1.png" class="d-block w-100" alt="Página de atividades: Playground">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/atv-sp-p1.png" class="d-block w-100" alt="Página de atividades: Quiz com 100 perguntas sobre os Frameworks">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/atv-tp-p1.png" class="d-block w-100" alt="Página de atividades: Complete o código">
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjeto1" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjeto1" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-                    </div>
-                    <p class="text-start">Aplicação web full-stack que utiliza a API do Gemini para gerar flashcards de estudo a partir de um tema fornecido pelo usuário. O projeto foi construído com Django, demonstrando a integração segura de uma API externa em um backend Python.</p>
-                    <a href="https://projeto-estudo.onrender.com/" class="btn btn-primary btn-lg mt-3" target="_blank">
-                        <i class="fas fa-external-link-alt me-2"></i> Ver Projeto Online
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Projeto 2: Script de Automação -->
-    <div class="modal fade" id="projeto2Modal" tabindex="-1" aria-labelledby="projeto2ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projeto2ModalLabel">Projeto: Script de Automação</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                     <div id="carouselProjeto2" class="carousel slide mb-4" data-bs-ride="carousel">
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/vba-p2.png" class="d-block w-100" alt="Fluxograma da Aplicação">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/log-p2.png" class="d-block w-100" alt="Log da Operação">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-start">Este projeto é um script em VBA que automatiza uma série de tarefas de manutenção e preparação de dados para dois banco de dados backend. Foi desenvolvido com foco em eficiência e usa puramente VBA. Fluxograma e Log detalhado da operação.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal Projeto 3: Landing Page -->
-    <div class="modal fade" id="projeto3Modal" tabindex="-1" aria-labelledby="projeto3ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projeto3ModalLabel">Projeto: Landing Page Moderna</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="carouselProjeto3" class="carousel slide mb-4" data-bs-ride="carousel">
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página de Cadastro de Leads">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página Cadastro de Unidades">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página de Registro Histórico de Consumo">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página Registro das Propostas">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página Simulação Custos">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página Dashboard">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="Página de Parâmetros da Simulação">
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjeto3" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjeto3" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-                    </div>
-                    <p class="text-start">Landing page construída com HTML, CSS e JavaScript, utilizando Bootstrap 5 para garantir total responsividade. O design inclui efeitos de glassmorphism e animações sutis para uma experiência de usuário moderna.</p>
-                    <a href="URL_DO_SEU_PROJETO_3_ONLINE_SE_TIVER" class="btn btn-primary btn-lg mt-3" target="_blank">
-                        <i class="fas fa-external-link-alt me-2"></i> Ver Projeto Online
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal Projeto 4: Script Faturas -->
-    <div class="modal fade" id="projeto4Modal" tabindex="-1" aria-labelledby="projeto4ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projeto4ModalLabel">Projeto: Bot de Dados</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="carouselProjeto4" class="carousel slide mb-4" data-bs-ride="carousel">
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/detalhe-projeto4-a.gif" class="d-block w-100" alt="Demonstração do bot no terminal">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-start">Este bot em Python foi desenvolvido para extrair dados de faturas de distribuidoras e montar uma planilha no Excel com os dados extraídos, diminuindo drasticamente o tempo que gestores e estagiarios levavam. Utiliza bibliotecas como pdfplumber, re.</p>
-                    <a href="url_projeto_online" class="btn btn-primary btn-lg mt-3" target="_blank">
-                        <i class="fas fa-external-link-alt me-2"></i> Ver Projeto Online
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal Projeto 5: Script CCEE -->
-    <div class="modal fade" id="projeto5Modal" tabindex="-1" aria-labelledby="projeto5ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projeto5ModalLabel">Projeto: Automação CCEE</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="carouselProjeto5" class="carousel slide mb-4" data-bs-ride="carousel">
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/ccee.drawio.png" class="d-block w-100" alt="Fluxograma">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/detalhe-projeto5-b.png" class="d-block w-100" alt="Detalhe de um gráfico interativo">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/" class="d-block w-100" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjeto5" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjeto5" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-                    </div>
-                    <p class="text-start">Painel de visualização de dados construído com [mencione a tecnologia, ex: JavaScript e Chart.js]. Ele consome dados de uma fonte e os exibe em gráficos interativos, permitindo ao usuário filtrar e analisar as informações de forma intuitiva.</p>
-                    <a href="url_projeto_online" class="btn btn-primary btn-lg mt-3" target="_blank">
-                        <i class="fas fa-external-link-alt me-2"></i> Ver Projeto Online
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal Projeto 6: Gerenciador de Tarefas -->
-    <div class="modal fade" id="projeto6Modal" tabindex="-1" aria-labelledby="projeto6ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projeto6ModalLabel">Projeto: Gerenciador de Tarefas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="carouselProjeto6" class="carousel slide mb-4" data-bs-ride="carousel">
-                        <div class="carousel-inner rounded">
-                            <div class="carousel-item active">
-                                <div class="carousel-image-wrapper">
-                                    <img src="./assets/images/detalhe-projeto6-a.gif" class="d-block w-100" alt="Demonstração do gerenciador de tarefas no terminal">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-start">Aplicação de linha de comando (CLI) em Python para gerenciar tarefas. Permite criar, listar, atualizar e deletar tarefas, com os dados sendo salvos em um banco de dados SQLite para persistência.</p>
-                    <a href="url_projeto_online" class="btn btn-primary btn-lg mt-3" target="_blank">
-                        <i class="fas fa-external-link-alt me-2"></i> Ver Projeto Online
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
     <script src="./scripts/main.js"></script>
-
 </body>
 </html>
-
