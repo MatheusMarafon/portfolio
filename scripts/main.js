@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elements.loadingScreen) {
             setTimeout(() => {
                 elements.loadingScreen.classList.add('hidden');
-                showToast('Portfólio carregado com sucesso! 🚀', 'success');
+                showToast('Portfólio carregado com sucesso!', 'success');
             }, 500);
         }
     });
@@ -962,7 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
         init() {
             const shareBtn = document.createElement('button');
             shareBtn.className = 'btn btn-primary share-btn';
-            shareBtn.innerHTML = '📤 Compartilhar';
+            shareBtn.innerHTML = 'Compartilhar';
             shareBtn.onclick = () => this.share();
             
             const heroSection = document.querySelector('.hero, #hero');
@@ -1285,10 +1285,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const perfData = performance.getEntriesByType('navigation')[0];
                         const loadTime = perfData.loadEventEnd - perfData.fetchStart;
                         
-                        console.log(`%c⚡ Tempo de carregamento: ${Math.round(loadTime)}ms`, 'color: #00ff00; font-weight: bold;');
+                        console.log(`%cTempo de carregamento: ${Math.round(loadTime)}ms`, 'color: #00ff00; font-weight: bold;');
                         
                         if (loadTime < 2000) {
-                            showToast('⚡ Carregamento ultra-rápido!', 'success');
+                            showToast('Carregamento ultra-rápido!', 'success');
                         }
                     }, 0);
                 });
@@ -1558,10 +1558,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========================================
     const smartSuggestions = {
         suggestions: [
-            { condition: () => !achievements.data.chatter, message: '💬 Que tal conversar com o chatbot? (CTRL+K)', action: () => chatbot.toggleWindow() },
-            { condition: () => !localStorage.getItem('theme'), message: '🌙 Experimente o modo escuro! (CTRL+D)', action: () => theme.toggle() },
-            { condition: () => sectionTracker.visited.size < 3, message: '🔍 Explore mais seções do portfólio!', action: null },
-            { condition: () => !achievements.data.form_sender, message: '📧 Envie uma mensagem de contato!', action: () => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' }) }
+            { condition: () => !achievements.data.chatter, message: 'Que tal conversar com o chatbot? (CTRL+K)', action: () => chatbot.toggleWindow() },
+            { condition: () => !localStorage.getItem('theme'), message: 'Experimente o modo escuro! (CTRL+D)', action: () => theme.toggle() },
+            { condition: () => sectionTracker.visited.size < 3, message: 'Explore mais seções do portfólio!', action: null },
+            { condition: () => !achievements.data.form_sender, message: 'Envie uma mensagem de contato!', action: () => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' }) }
         ],
         
         init() {

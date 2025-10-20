@@ -1266,121 +1266,6 @@ a:not(.btn):not(.nav-link):hover::after {
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* ========================================
-   13. RESPONSIVIDADE APRIMORADA
-   ======================================== */
-@media (max-width: 992px) {
-    #hero h1 { font-size: 3rem; }
-    .stats-section { 
-        padding: 2rem;
-        margin: -2rem 1rem 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body { cursor: auto; }
-    
-    #auxiliary-buttons {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        gap: 0.75rem;
-    }
-    
-    .back-to-top,
-    .theme-toggle,
-    .chatbot-toggle {
-        width: 3rem;
-        height: 3rem;
-        font-size: 1.1rem;
-    }
-    
-    .chatbot-toggle {
-        font-size: 1.5rem;
-    }
-    
-    #hero { min-height: 90vh; }
-    #hero h1 { font-size: 2.5rem; }
-    #hero .lead { font-size: 1.1rem; }
-    
-    #hero .btn {
-        display: block;
-        width: 100%;
-        margin: 0.5rem 0 !important;
-    }
-    
-    .stats-section {
-        padding: 2rem 1rem;
-        margin: -2rem 1rem 2rem;
-    }
-    
-    .stat-number { font-size: 2rem; }
-    .section-title { font-size: 2rem; }
-    
-    .filter-buttons {
-        gap: 0.5rem;
-    }
-    
-    .filter-btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1.25rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand { font-size: 1.2rem; }
-    
-    #projetos .card-body { padding: 1.5rem; }
-    
-    .stats-section {
-        padding: 1.5rem 1rem;
-    }
-    
-    .social-links {
-        gap: 1rem;
-    }
-    
-    .footer-icon {
-        font-size: 1.25rem;
-    }
-}
-
-/* ========================================
-   14. ACESSIBILIDADE APRIMORADA
-   ======================================== */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Focus Visible Aprimorado */
-*:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
-    border-radius: 0.25rem;
-}
-
-/* Skip to Content Link */
-.skip-to-content {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-color);
-    color: white;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    z-index: 10000;
-    transition: top 0.3s ease;
-}
-
-.skip-to-content:focus {
-    top: 0;
-}
 
 /* ========================================
    15. PERFORMANCE AVANÇADA
@@ -1675,28 +1560,13 @@ img[loading="lazy"].loaded {
     transform: scale(0.95);
 }
 
-/* Responsividade do Chat Aprimorada */
-@media (max-width: 768px) {
-    .chatbot-container {
-        bottom: 6rem;
-        right: 1.5rem;
-        width: calc(100vw - 3rem);
-    }
-}
 
 /* Negrito para textos */
 .bold-strong {
     font-weight: 600;
 }
 
-/* ========================================
-   17. AJUSTES PERSONALIZADOS APRIMORADOS
-   ======================================== */
-@media (min-width: 992px) {
-    .skills-column {
-        padding-left: 9rem;
-    }
-}
+
 
 /* ========================================
    18. AJUSTE DE OPACIDADE OTIMIZADO
@@ -1737,47 +1607,6 @@ img[loading="lazy"].loaded {
 
 .carousel-image-wrapper:hover img {
     transform: scale(1.02);
-}
-
-/* ========================================
-   20. CONTROLES DO CARROSSEL APRIMORADOS
-   ======================================== */
-@media (min-width: 992px) {
-    .carousel-control-prev {
-        left: -67px;
-        transition: all 0.3s var(--transition-smooth);
-    }
-
-    .carousel-control-next {
-        right: -67px;
-        transition: all 0.3s var(--transition-smooth);
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-        opacity: 0.7;
-        width: 50px;
-        height: 50px;
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--glass-border);
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
-        opacity: 1;
-        background: var(--primary-color);
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: var(--shadow-lg), var(--shadow-glow);
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    }
 }
 
 /* ========================================
@@ -1842,31 +1671,6 @@ img[loading="lazy"].loaded {
 
 .card:hover .card-img-top {
     filter: brightness(1.1) contrast(1.05);
-}
-
-/* ========================================
-   23. ECRÃS ULTRAWIDE OTIMIZADOS
-   ======================================== */
-@media (min-width: 1600px) {
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1540px;
-    }
-}
-
-@media (min-width: 1920px) {
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1700px;
-    }
 }
 
 /* ========================================
@@ -1947,60 +1751,6 @@ img[loading="lazy"].loaded {
 [data-tooltip]:hover::before,
 [data-tooltip]:hover::after {
     opacity: 1;
-}
-
-/* ========================================
-   26. MODO ALTO CONTRASTE
-   ======================================== */
-@media (prefers-contrast: high) {
-    :root {
-        --primary-color: #000000;
-        --secondary-color: #ffffff;
-        --info-color: #000000;
-    }
-    
-    [data-theme="dark"] {
-        --primary-color: #ffffff;
-        --secondary-color: #000000;
-        --info-color: #ffffff;
-    }
-}
-
-/* ========================================
-   27. PRINT STYLES
-   ======================================== */
-@media print {
-    /* Oculta elementos desnecessários na impressão */
-    #auxiliary-buttons,
-    .navbar,
-    .chatbot-container,
-    .loading-screen,
-    .scroll-progress,
-    .filter-buttons,
-    footer .social-links {
-        display: none !important;
-    }
-    
-    /* Otimiza cores para impressão */
-    * {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-    
-    /* Garante quebras de página apropriadas */
-    .project-item,
-    .stat-item,
-    section {
-        page-break-inside: avoid;
-    }
-    
-    /* Remove animações */
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
 }
 
 /* ========================================
@@ -2773,27 +2523,7 @@ img[data-src].loaded {
     opacity: 1;
 }
 
-/* ========================================
-   47. AJUSTES FINAIS DE RESPONSIVIDADE
-   ======================================== */
-@media (max-width: 480px) {
-    .stats-section {
-        padding: 1rem;
-    }
-    
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    
-    .section-title {
-        font-size: 1.75rem;
-    }
-    
-    .chatbot-container {
-        width: calc(100vw - 2rem);
-        right: 1rem;
-    }
-}
+
 
 /* ========================================
    FIM DOS ESTILOS APRIMORADOS
@@ -3013,23 +2743,7 @@ body.matrix-mode * {
     transition: all 0.3s ease;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .achievement-notification {
-        min-width: 90%;
-        padding: 15px;
-    }
-    
-    .toast-notification {
-        right: 10px !important;
-        left: 10px;
-        width: calc(100% - 20px);
-    }
-    
-    .cursor-particle {
-        display: none;
-    }
-}
+
 
 /* Alto Contraste */
 body.high-contrast {
@@ -3151,33 +2865,7 @@ body.slow-connection [data-aos] {
     color: white;
 }
 
-/* Responsividade Adicional */
-@media (max-width: 768px) {
-    .quick-feedback-btn {
-        bottom: 80px;
-        right: 10px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-    
-    .control-panel {
-        width: 95%;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-    
-    body.font-size-xlarge {
-        font-size: 18px;
-    }
-}
 
-/* Animações Suaves para Acessibilidade */
-@media (prefers-reduced-motion: no-preference) {
-    .control-panel {
-        animation: slideIn 0.3s ease;
-    }
-}
 
 @keyframes slideIn {
     from {
@@ -3260,16 +2948,16 @@ body.slow-connection [data-aos] {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 0; /* Espaçamento para a linha estender */
+    padding: 2rem 0;
 }
 
 /* A linha central vertical com degradê */
 .timeline-v2::before {
     content: '';
     position: absolute;
-    margin: 130px;
     width: 3px;
     left: 33%;
+    margin: 0 130px;
     background: linear-gradient(
         to bottom, 
         transparent 0%,
@@ -3277,12 +2965,8 @@ body.slow-connection [data-aos] {
         #e9ecef 95%,
         transparent 100%
     );
-
-    /* ============================================ */
-    /* AJUSTE O TAMANHO DA LINHA AQUI */
     top: 0;
-    bottom: -1900px; /* Aumente ou reduza este valor p/ controlar o fim da linha */
-    /* ============================================ */
+    bottom: -1900px;
 }
 
 /* Cada item/ano na timeline */
@@ -3291,44 +2975,16 @@ body.slow-connection [data-aos] {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 3rem; /* Espaçamento entre os itens */
+    padding-bottom: 3rem;
 }
 
 /* Estilização dos anos */
-.timeline-year-25-1{
-    transform: translateX(1100%);
-    margin-top: 27.5px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: var(--font-heading);
-}
-.timeline-year-25-2 {
-    transform: translateX(1100%);
-    margin-top: 27.5px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: var(--font-heading);
-}
-.timeline-year-24{
-    transform: translateX(1100%);
-    margin-top: 27.5px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: var(--font-heading);
-}
-.timeline-year-23{
-    transform: translateX(1100%);
-    margin-top: 27.5px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: var(--font-heading);
-}
+.timeline-year-25-1,
+.timeline-year-25-2,
+.timeline-year-24,
+.timeline-year-23,
 .timeline-year-22 {
-    transform: translateX(1100%);
+    transform: translateX(800%);
     margin-top: 27.5px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -3370,6 +3026,7 @@ body.slow-connection [data-aos] {
     margin-bottom: 0.25rem;
     font-size: 1.25rem;
 }
+
 .timeline-content-v2 h5 {
     font-size: 1rem;
     font-weight: 500;
@@ -3377,17 +3034,20 @@ body.slow-connection [data-aos] {
     margin-bottom: 1.5rem;
     font-style: italic;
 }
+
 .timeline-content-v2 p {
     border-top: 1px solid var(--border-color);
     padding-top: 1rem;
     margin-top: 1rem;
 }
+
 .timeline-content-v2 ul {
     list-style: none;
     padding-left: 0;
     margin-top: 1rem;
     border-top: 1px solid var(--border-color);
 }
+
 .timeline-content-v2 ul li {
     padding: 1rem 0;
     display: flex;
@@ -3401,33 +3061,330 @@ body.slow-connection [data-aos] {
     margin-top: 5px;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
+/* ======================================== */
+/* RESPONSIVIDADE GERAL 
+   ======================================== */
+
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    #hero h1 {
+        font-size: calc(2rem + 3vw);
+    }
+    
+    #hero .lead {
+        font-size: calc(1rem + 1vw);
+    }
+
+    #sobre .row > div {
+        text-align: center;
+    }
+    
+    #sobre .skill-item {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+    }
+
+    /* ======================================== */
+    /* RESPONSIVIDADE TIMELINE - TABLETS */
+    /* ======================================== */
+    .timeline-v2 {
+        padding: 2rem 1rem;
+    }
+
+    .timeline-v2::before {
+        left: 30px;
+        margin: 0;
+        background: var(--border-color);
+    }
+
+    .timeline-item-v2 {
+        flex-direction: column;
+        padding-left: 70px;
+        padding-bottom: 2.5rem;
+    }
+
+    .timeline-year-25-1,
+    .timeline-year-25-2,
+    .timeline-year-24,
+    .timeline-year-23,
+    .timeline-year-22 {
+        position: absolute;
+        left: 30px;
+        transform: translateX(-50%);
+        top: 0;
+        margin-top: 0;
+        padding: 5px 10px;
+        font-size: 1.1rem;
+        background: var(--bg-secondary-color);
+        border-radius: 6px;
+        z-index: 5;
+    }
+
+    .timeline-content-v2 {
+        width: 100%;
+        margin-top: 45px;
+    }
+
+    .timeline-icon {
+        left: 30px;
+        margin-left: 0;
+        transform: translateX(-50%);
+        top: 45px;
+    }
+
+    /* Responsividade PROJETOS */
+    .project-details .btn {
+        padding: 2rem 0;
+        text-align: center;
+    }
+    
+    .project-showcase {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    
+    .project-showcase .col-lg-6 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-links .btn {
+        margin: 0.5rem;
+    }    
+}
+
+/* --- Breakpoint para Celulares (Largura < 768px) --- */
+@media (max-width: 767.98px) {
+    /* Responsividade Geral */
+    body { 
+        cursor: auto;
+    }
+    
+    #cursor-dot, #cursor-circle { 
+        display: none;
+    }
+    
+    h1 { 
+        font-size: 2.2rem;
+    }
+    
+    h2 { 
+        font-size: 1.8rem;
+    }
+    
+    section { 
+        padding: 4rem 0;
+    }
+
+    /* Responsividade para Botões Auxiliares */
+    #auxiliary-buttons {
+        bottom: 1rem;
+        right: 1rem;
+        gap: 0.5rem;
+    }
+    
+    #auxiliary-buttons button {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .chatbot-toggle { 
+        font-size: 1.3rem;
+    }
+
+    /* Responsividade para a Seção Hero */
+    #hero { 
+        min-height: 80vh;
+    }
+    
+    #hero h1 { 
+        font-size: calc(1.8rem + 4vw);
+    }
+    
+    #hero .lead { 
+        font-size: calc(0.9rem + 1vw);
+    }
+    
+    #hero .btn {
+        display: block;
+        width: 90%;
+        margin: 0.75rem auto !important;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* ======================================== */
+    /* RESPONSIVIDADE TIMELINE - MOBILE */
+    /* ======================================== */
+    .timeline-v2 {
+        padding: 1.5rem 0.5rem;
+    }
+
     .timeline-v2::before {
         left: 20px;
+        margin: 0;
+        width: 2px;
+        bottom: 0;
     }
-    .timeline-item-v2{
-        flex-direction: column;
-        align-items: flex-start;
+
+    .timeline-item-v2 {
+        padding-left: 55px;
+        padding-right: 0.5rem;
+        padding-bottom: 2rem;
     }
-    .timeline-year {
-        left: 1%;
-        transform: translateX(-50%)   
+
+    .timeline-year-25-1,
+    .timeline-year-25-2,
+    .timeline-year-24,
+    .timeline-year-23,
+    .timeline-year-22 {
+        left: 20px;
+        font-size: 0.9rem;
+        padding: 4px 8px;
+        white-space: nowrap;
     }
-    .timeline-content-v2{
-        width: 100%;
-        margin-left: 0;
-        padding-left: 50px;
-        background: transparent;
-        border: none;
-        box-shadow: none;
+
+    .timeline-content-v2 {
+        padding: 1rem;
+        margin-top: 40px;
+        border-radius: 8px;
     }
-    .timeline-icon{
-        left: 0 !important;
-        transform: translateX(0) !important;
-        top: -5px;
+
+    .timeline-content-v2 h4 {
+        font-size: 1.1rem;
     }
+
+    .timeline-content-v2 h5 {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-content-v2 p {
+        font-size: 0.95rem;
+        padding-top: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
     .timeline-content-v2 ul li {
         padding: 0.75rem 0;
+        font-size: 0.9rem;
+    }
+
+    .timeline-icon {
+        left: 20px;
+        top: 40px;
+        width: 25px;
+        height: 25px;
+        font-size: 0.75rem;
+        border-width: 2px;
+    }
+
+    /* Responsividade para Stats */
+    .stats-section { 
+        padding: 1.5rem 0.5rem;
+        margin: -1.5rem 0.5rem 1.5rem;
+    }
+    
+    .stat-item { 
+        margin-bottom: 1.5rem;
+    }
+    
+    .stat-number { 
+        font-size: 2rem;
+    }
+    
+    .stat-label { 
+        font-size: 1rem;
+    }
+    
+    /* Responsividade para Contato */
+    #contato .lead { 
+        font-size: 1rem;
+    }
+    
+    #contato form { 
+        padding: 0 0.5rem;
+    }
+
+    /* Responsividade para Footer */
+    footer { 
+        padding: 2rem 0;
+    }
+    
+    .social-links { 
+        gap: 1rem;
+    }
+    
+    .footer-icon { 
+        font-size: 1.3rem;
+    }
+}
+
+/* --- Breakpoint para Telas Muito Pequenas (Largura < 576px) --- */
+@media (max-width: 575.98px) {
+    .navbar-brand { 
+        font-size: 1.1rem;
+    }
+    
+    h2 { 
+        font-size: 1.6rem;
+    }
+    
+    .project-details h3 { 
+        font-size: 1.5rem;
+    }
+
+    /* ======================================== */
+    /* TIMELINE - TELAS PEQUENAS */
+    /* ======================================== */
+    .timeline-v2 {
+        padding: 1rem 0.25rem;
+    }
+
+    .timeline-item-v2 {
+        padding-left: 45px;
+        padding-bottom: 1.5rem;
+    }
+
+    .timeline-year-25-1,
+    .timeline-year-25-2,
+    .timeline-year-24,
+    .timeline-year-23,
+    .timeline-year-22 {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+        left: 15px;
+    }
+
+    .timeline-v2::before {
+        left: 15px;
+    }
+
+    .timeline-icon {
+        left: 15px;
+        width: 22px;
+        height: 22px;
+        top: 35px;
+    }
+
+    .timeline-content-v2 {
+        padding: 0.75rem;
+        margin-top: 35px;
+    }
+
+    .timeline-content-v2 h4 {
+        font-size: 1rem;
+    }
+
+    .timeline-content-v2 h5 {
+        font-size: 0.85rem;
+    }
+
+    .timeline-content-v2 ul li .fas {
+        margin-right: 0.5rem;
+        font-size: 0.85rem;
     }
 }
