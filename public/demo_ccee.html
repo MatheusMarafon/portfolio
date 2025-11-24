@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração: Bot de Web Scraping CCEE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --dark-bg: #1E1E1E;
+            --terminal-header: #333;
+            --text-color: #00FF41;
+            --muted-text: #888;
+            --primary-color: #00A8CC;
+            --border-color: #444;
+        }
+        body { font-family: 'Fira Code', monospace; background-color: #121212; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; padding: 2rem; gap: 1rem; }
+        h1 { font-family: 'Poppins', sans-serif; margin-bottom: 1rem; text-align: center; }
+        .container { display: flex; gap: 2rem; width: 100%; max-width: 1400px; align-items: stretch; }
+        
+        .terminal-window { background-color: var(--dark-bg); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); flex: 1; display: flex; flex-direction: column; min-width: 400px; }
+        .terminal-header { background-color: var(--terminal-header); padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+        .terminal-body { padding: 1.5rem; height: 500px; overflow-y: auto; }
+        .terminal-line { margin-bottom: 0.5rem; white-space: pre-wrap; word-break: break-all; }
+        .prompt { color: var(--primary-color); font-weight: 700; }
+        .command-input-line { display: flex; }
+        #commandInput { background: transparent; border: none; color: white; font-family: 'Fira Code', monospace; font-size: 1em; flex-grow: 1; outline: none; caret-color: white; }
+        .output { color: var(--text-color); }
+        .comment { color: var(--muted-text); }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+
+        .browser-window { flex: 1.5; background: #fff; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+        .browser-header { background-color: #e9ecef; padding: 8px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #dee2e6; }
+        .address-bar { flex-grow: 1; background: white; border: 1px solid #ced4da; border-radius: 20px; padding: 5px 15px; font-size: 0.9em; color: #495057; }
+        .browser-body { flex-grow: 1; padding: 2rem; color: #111; font-family: 'Roboto', sans-serif; overflow-y: auto; }
+
+        .ccee-login-page { text-align: center; }
+        .ccee-login-page h2 { color: #0056b3; font-family: 'Poppins'; }
+        .login-box { max-width: 350px; margin: 2rem auto; border: 1px solid #ddd; padding: 2rem; border-radius: 8px; }
+        .login-box input { width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+        .login-box .captcha-img { background: #f0f0f0; border: 1px solid #ccc; padding: 10px; margin-bottom: 1rem; font-family: 'Courier New', monospace; font-size: 1.5rem; letter-spacing: 5px; user-select: none; }
+        .login-box button { width: 100%; padding: 10px; background: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .scraping-table { width: 100%; border-collapse: collapse; }
+        .scraping-table th, .scraping-table td { border: 1px solid #ddd; padding: 8px; }
+        .scraping-table th { background-color: #f2f2f2; }
+        .scraping-table tr.highlight { background-color: #fff3cd; transition: background-color 0.2s ease; }
+
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal.active { opacity: 1; visibility: visible; }
+        .modal-content { background: var(--dark-bg); padding: 1rem; border-radius: 10px; max-width: 90%; max-height: 90%; overflow: auto; text-align: center; }
+        .modal-content h2 { font-family: 'Poppins', sans-serif; margin-bottom: 1rem; color: var(--primary-color); }
+        .modal-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; }
+        .report-table { width: 100%; border-collapse: collapse; margin-top: 1rem; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .report-table th, .report-table td { padding: 14px 18px; border-bottom: 1px solid var(--border-color); text-align: left; font-family: 'Roboto', sans-serif; }
+        .report-table thead th { background-color: #166d4b; color: white; font-family: 'Poppins'; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .report-table tbody tr { background-color: #2c2c2c; }
+        .report-table tbody tr:nth-child(even) { background-color: #252525; }
+
+        @media (max-width: 1200px) {
+            body { padding: 1rem; }
+            .container { flex-direction: column; }
+            .terminal-body, .browser-body { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Demonstração: Bot de Web Scraping CCEE</h1>
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-header"></div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-line comment"># Para iniciar, digite o comando e pressione Enter:</div>
+                <div class="terminal-line comment"># python ccee_bot.py</div>
+                <div class="terminal-line command-input-line"><span class="prompt">$ &nbsp;</span><input type="text" id="commandInput" autofocus autocomplete="off"></div>
+            </div>
+        </div>
+        <div class="browser-window">
+            <div class="browser-header"><div class="address-bar" id="addressBar">about:blank</div></div>
+            <div class="browser-body" id="browserBody"></div>
+        </div>
+    </div>
+    <div class="modal" id="reportModal">
+        <span class="modal-close" onclick="hideModal('reportModal')">&times;</span>
+        <div class="modal-content" style="width: 900px; max-width: 90%;">
+            <h2>Relatório Gerado: representantes_ccee.xlsx</h2>
+            <table class="report-table">
+                <thead><tr><th>Nome do Representante</th><th>Empresa</th><th>CNPJ</th></tr></thead>
+                <tbody><tr><td>João da Silva</td><td>Energia Pura Ltda.</td><td>12.345.678/0001-99</td></tr><tr><td>Maria Oliveira</td><td>Soluções Elétricas S.A.</td><td>98.765.432/0001-11</td></tr><tr><td>Carlos Pereira</td><td>Comercializadora Watt</td><td>55.444.333/0001-22</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const terminalBody = document.getElementById('terminalBody');
+        const CCEE_LOGIN_PAGE = `...`; // O HTML da página de login está aqui dentro
+        const CCEE_DATA_PAGE = `...`; // O HTML da página de dados está aqui dentro
+        
+        terminalBody.addEventListener('keydown', handleCommand);
+        function handleCommand(e) {
+            if (e.target.id !== 'commandInput' || e.key !== 'Enter') return;
+            const commandInput = e.target;
+            const command = commandInput.value.trim();
+            const line = commandInput.parentElement;
+            line.innerHTML = `<span class="prompt">$ &nbsp;</span>${command}`;
+            if (command === 'python ccee_bot.py' || command === 'ccee_bot.py') { runSimulation(); } 
+            else { addTerminalLine(`Comando não encontrado: ${command}`, 'error'); resetInput(); }
+        }
+        function addTerminalLine(text, type = 'output') { const line = document.createElement('div'); line.className = `terminal-line ${type}`; line.innerHTML = text; terminalBody.appendChild(line); terminalBody.scrollTop = terminalBody.scrollHeight; }
+        function resetInput() { const newLine = document.createElement('div'); newLine.className = 'terminal-line command-input-line'; newLine.innerHTML = `<span class="prompt">$ &nbsp;</span><input type="text" id="commandInput" autofocus autocomplete="off">`; terminalBody.appendChild(newLine); const newCmd = document.getElementById('commandInput'); newCmd.focus(); }
+        function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+        function showModal(id) { document.getElementById(id).classList.add('active'); }
+        function hideModal(id) { document.getElementById(id).classList.remove('active'); }
+        async function runSimulation() {
+            const addressBar = document.getElementById('addressBar');
+            const browserBody = document.getElementById('browserBody');
+            browserBody.innerHTML = ''; addressBar.textContent = 'about:blank';
+            await sleep(500); addTerminalLine("Inicializando bot com Selenium...", "comment"); await sleep(1500);
+            addTerminalLine("Abrindo navegador em modo automatizado..."); addressBar.textContent = 'https://www.ccee.org.br/portal/login'; browserBody.innerHTML = CCEE_LOGIN_PAGE; await sleep(2000);
+            addTerminalLine("Localizando elementos: campo de usuário, senha e captcha."); document.getElementById('username').value = 'bot_user'; await sleep(1000); document.getElementById('password').value = '********'; await sleep(1000);
+            addTerminalLine("Resolvendo captcha (simulado)..."); document.getElementById('captchaInput').value = 'X3F8K'; await sleep(1500);
+            addTerminalLine("Enviando formulário de login..."); await sleep(2000);
+            addTerminalLine("Login bem-sucedido! Navegando para a área de agentes...", "success"); addressBar.textContent = 'https://www.ccee.org.br/portal/agentes/representantes'; browserBody.innerHTML = CCEE_DATA_PAGE; await sleep(2000);
+            addTerminalLine("Iniciando extração de dados da tabela...");
+            const rows = document.querySelectorAll('#dataTable tbody tr');
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].classList.add('highlight'); const name = rows[i].children[0].textContent;
+                addTerminalLine(`   -> Extraindo registro ${i + 1}/${rows.length}: ${name}`); await sleep(1000);
+                rows[i].classList.remove('highlight');
+            }
+            await sleep(1000);
+            addTerminalLine("\nExtração concluída. Consolidando dados...", "comment"); await sleep(1500);
+            addTerminalLine("Gerando relatório em formato Excel..."); await sleep(2000);
+            addTerminalLine("Relatório 'representantes_ccee.xlsx' criado com sucesso!", "success");
+            showModal('reportModal'); await sleep(1000); resetInput();
+        }
+    </script>
+</body>
+</html>

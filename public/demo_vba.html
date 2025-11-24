@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração: Automação de Manutenção VBA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --dark-bg: #1E1E1E;
+            --terminal-header: #333;
+            --text-color: #00FF41;
+            --muted-text: #888;
+            --primary-color: #00A8CC;
+            --border-color: #444;
+            --error-color: #dc3545;
+            --success-color: #28a745;
+        }
+        body { font-family: 'Fira Code', monospace; background-color: #121212; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; padding: 2rem; gap: 1rem; }
+        h1 { font-family: 'Poppins', sans-serif; margin-bottom: 1rem; text-align: center; }
+        .container { display: flex; gap: 2rem; width: 100%; max-width: 1400px; align-items: stretch; }
+        
+        .terminal-window { background-color: var(--dark-bg); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); flex: 1; display: flex; flex-direction: column; min-width: 400px; }
+        .terminal-header { background-color: var(--terminal-header); padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+        .terminal-body { padding: 1.5rem; height: 500px; overflow-y: auto; }
+        .terminal-line { margin-bottom: 0.5rem; white-space: pre-wrap; word-break: break-all; }
+        .prompt { color: var(--primary-color); font-weight: 700; }
+        .command-input-line { display: flex; }
+        #commandInput { background: transparent; border: none; color: white; font-family: 'Fira Code', monospace; font-size: 1em; flex-grow: 1; outline: none; caret-color: white; }
+        .output { color: var(--text-color); }
+        .comment { color: var(--muted-text); }
+        .success { color: var(--success-color); font-weight: bold; }
+        .error { color: var(--error-color); font-weight: bold; }
+
+        .process-flow-container { flex: 1.5; background-color: #252525; border-radius: 10px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+        .flow-row { display: flex; align-items: center; justify-content: center; gap: 2rem; }
+        .flow-item { text-align: center; opacity: 0.3; transition: all 0.5s ease; position: relative; }
+        .flow-item.active { opacity: 1; transform: scale(1.1); }
+        .flow-item.disconnected { opacity: 0.5; filter: grayscale(1); }
+        .flow-item.disconnected::after { content: '\f057'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--error-color); position: absolute; top: 0; right: 0; font-size: 1.5rem; }
+        .flow-item.completed i { color: var(--success-color) !important; }
+        .flow-item i { font-size: 3rem; margin-bottom: 10px; transition: color 0.5s ease; }
+        .flow-arrow { font-size: 2rem; opacity: 0.3; transition: all 0.5s ease; }
+        .flow-arrow.active { opacity: 1; color: var(--primary-color); transform: scale(1.2); }
+        .processing-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; color: var(--primary-color); opacity: 0; transition: opacity 0.3s ease; }
+        .flow-item.processing .processing-icon { opacity: 1; }
+
+        @media (max-width: 1200px) {
+            body { padding: 1rem; }
+            .container { flex-direction: column; }
+            .terminal-body { height: 300px; }
+            .process-flow-container { min-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Demonstração: Automação de Manutenção VBA</h1>
+    <div class="container">
+        <div class="terminal-window">
+            <div class="terminal-header"></div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-line comment"># Para iniciar a rotina, digite o comando e pressione Enter:</div>
+                <div class="terminal-line comment"># run_maintenance.vbs</div>
+                <div class="terminal-line command-input-line"><span class="prompt">$ &nbsp;</span><input type="text" id="commandInput" autofocus autocomplete="off"></div>
+            </div>
+        </div>
+        <div class="process-flow-container">
+            <div class="flow-row"><div class="flow-item" id="flow-users"><i class="fas fa-users" style="color: #6c757d;"></i><div>Usuários Ativos</div></div></div>
+            <div class="flow-row"><div class="flow-arrow"><i class="fas fa-arrow-down"></i></div></div>
+            <div class="flow-row">
+                <div class="flow-item" id="flow-frontend"><i class="fas fa-database" style="color: #0d6efd;"></i><div>Frontend_DB.accdb</div></div>
+                <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-item" id="flow-backend"><i class="fas fa-database" style="color: #fd7e14;"></i><div>Backend_DB.accdb</div><i class="fas fa-cog fa-spin processing-icon"></i></div>
+                <div class="flow-arrow" id="arrow-backup"><i class="fas fa-arrow-right"></i></div>
+                <div class="flow-item" id="flow-backup"><i class="fas fa-folder-plus" style="color: #ffc107;"></i><div>Pasta de Backups</div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const terminalBody = document.getElementById('terminalBody');
+        terminalBody.addEventListener('keydown', handleCommand);
+        function handleCommand(e) {
+            if (e.target.id !== 'commandInput' || e.key !== 'Enter') return;
+            const commandInput = e.target;
+            const command = commandInput.value.trim();
+            const line = commandInput.parentElement;
+            line.innerHTML = `<span class="prompt">$ &nbsp;</span>${command}`;
+            if (command === 'run_maintenance.vbs') { runSimulation(); } 
+            else { addTerminalLine(`Comando não reconhecido: ${command}`, 'error'); resetInput(); }
+        }
+        function addTerminalLine(text, type = 'output') { /* ...código de apoio... */ }
+        function resetInput() { /* ...código de apoio... */ }
+        function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+        function highlight(element, state) {
+            const flowItems = document.querySelectorAll('.flow-item, .flow-arrow');
+            flowItems.forEach(el => el.classList.remove('active'));
+            if(element) element.classList.add(state);
+        }
+        async function runSimulation() {
+            const flowItems = {
+                users: document.getElementById('flow-users'),
+                frontend: document.getElementById('flow-frontend'),
+                backend: document.getElementById('flow-backend'),
+                backup: document.getElementById('flow-backup'),
+                arrowBackup: document.getElementById('arrow-backup'),
+            };
+            Object.values(flowItems).forEach(el => el.classList.remove('active', 'disconnected', 'completed', 'processing'));
+            await sleep(500); addTerminalLine("Iniciando script 'run_maintenance.vbs'...", "comment"); highlight(flowItems.frontend, 'active'); await sleep(2000);
+            addTerminalLine("Verificando conexões ativas no banco de dados de backend..."); highlight(flowItems.users, 'active'); await sleep(1500);
+            addTerminalLine("2 usuários encontrados. Enviando aviso de desconexão forçada.", "error"); await sleep(1500);
+            addTerminalLine("Desconectando usuários para garantir a integridade dos dados..."); flowItems.users.classList.add('disconnected'); await sleep(2000);
+            addTerminalLine("\nIniciando rotina de backup do 'Backend_DB.accdb'..."); highlight(flowItems.arrowBackup, 'active'); await sleep(1500);
+            addTerminalLine("Backup 'backend_db_20251013.bak' criado com sucesso na pasta de backups.", "success"); highlight(flowItems.backup, 'active'); flowItems.backup.classList.add('completed'); await sleep(2000);
+            addTerminalLine("\nIniciando processo de compactação e reparo do banco de dados..."); highlight(flowItems.backend, 'active'); flowItems.backend.classList.add('processing'); await sleep(1000);
+            addTerminalLine("   -> Otimizando tabelas..."); await sleep(1500);
+            addTerminalLine("   -> Reconstruindo índices..."); await sleep(1500);
+            addTerminalLine("Compactação e reparo concluídos.", "success"); flowItems.backend.classList.remove('processing'); flowItems.backend.classList.add('completed'); await sleep(1000);
+            addTerminalLine("\nRotina de manutenção finalizada com sucesso!", "success");
+            resetInput();
+        }
+        addTerminalLine = (text, type = 'output') => { const line = document.createElement('div'); line.className = `terminal-line ${type}`; line.innerHTML = text; terminalBody.appendChild(line); terminalBody.scrollTop = terminalBody.scrollHeight; };
+        resetInput = () => { const newLine = document.createElement('div'); newLine.className = 'terminal-line command-input-line'; newLine.innerHTML = `<span class="prompt">$ &nbsp;</span><input type="text" id="commandInput" autofocus autocomplete="off">`; terminalBody.appendChild(newLine); const newCmd = document.getElementById('commandInput'); newCmd.focus(); };
+    </script>
+</body>
+</html>
