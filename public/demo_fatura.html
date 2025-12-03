@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração: Automação de Faturas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --dark-bg: #1E1E1E;
+            --terminal-header: #333;
+            --text-color: #00FF41;
+            --muted-text: #888;
+            --primary-color: #00A8CC;
+            --border-color: #444;
+        }
+        body {
+            font-family: 'Fira Code', monospace;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        h1 { font-family: 'Poppins', sans-serif; margin-bottom: 1rem; text-align: center; }
+        .container { display: flex; gap: 2rem; width: 100%; max-width: 1200px; align-items: stretch; }
+        
+        .terminal-window { background-color: var(--dark-bg); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); flex: 1; display: flex; flex-direction: column; }
+        .terminal-header { background-color: var(--terminal-header); padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+        .terminal-body { padding: 1.5rem; height: 400px; overflow-y: auto; }
+        .terminal-line { margin-bottom: 0.5rem; white-space: pre-wrap; word-break: break-all; }
+        .prompt { color: var(--primary-color); font-weight: 700; }
+        .command-input-line { display: flex; }
+        #commandInput { background: transparent; border: none; color: white; font-family: 'Fira Code', monospace; font-size: 1em; flex-grow: 1; outline: none; caret-color: white; }
+        .output { color: var(--text-color); }
+        .comment { color: var(--muted-text); }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal.active { opacity: 1; visibility: visible; }
+        .modal-content { background: var(--dark-bg); padding: 1rem; border-radius: 10px; max-width: 90%; max-height: 90%; overflow: auto; text-align: center; }
+        .modal-content h2 { font-family: 'Poppins', sans-serif; margin-bottom: 1rem; color: var(--primary-color); }
+        .modal-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; }
+        
+        .invoice-paper { background: white; color: #111; font-family: 'Roboto', sans-serif; padding: 2.5rem; max-width: 100%; text-align: left; border-radius: 5px; }
+        .invoice-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid #eee; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .invoice-header h1 { font-size: 1.5rem; color: #111; }
+        .invoice-header span { font-size: 0.9rem; color: #666; }
+        .customer-details { margin-bottom: 2rem; }
+        .customer-details div { margin-bottom: 0.25rem; }
+        .invoice-items { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+        .invoice-items th { background-color: #f8f9fa; padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; }
+        .invoice-items td { padding: 12px; border-bottom: 1px solid #eee; }
+        .text-right { text-align: right; }
+        .invoice-summary { display: flex; justify-content: flex-end; }
+        .summary-table { width: 40%; }
+        .summary-table td { padding: 8px; }
+        .summary-total { font-weight: bold; font-size: 1.2rem; border-top: 2px solid #111; }
+        
+        .report-table { width: 100%; border-collapse: collapse; margin-top: 1rem; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .report-table th, .report-table td { padding: 14px 18px; border-bottom: 1px solid var(--border-color); text-align: left; font-family: 'Roboto', sans-serif; }
+        .report-table thead th { background-color: #166d4b; color: white; font-family: 'Poppins', sans-serif; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .report-table tbody tr { background-color: #2c2c2c; transition: background-color 0.2s ease; }
+        .report-table tbody tr:nth-child(even) { background-color: #252525; }
+        .report-table tbody tr:hover { background-color: #3d3d3d; }
+        .report-table .currency { text-align: right; font-variant-numeric: tabular-nums; }
+        
+        @media (max-width: 992px) {
+            body { padding: 1rem; }
+            .container { flex-direction: column; }
+            .terminal-body { height: 300px; }
+            .modal-content { padding: 0.5rem; }
+            .invoice-paper { padding: 1.5rem; font-size: 0.9rem; }
+            .invoice-header h1 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Demonstração: Automação de Faturas</h1>
+    <div class="terminal-window">
+        <div class="terminal-header"></div>
+        <div class="terminal-body" id="terminalBody">
+            <div class="terminal-line comment"># Bem-vindo à simulação. Para iniciar, digite o comando e pressione Enter:</div>
+            <div class="terminal-line comment"># python run.py</div>
+            <div class="terminal-line command-input-line">
+                <span class="prompt">$ &nbsp;</span>
+                <input type="text" id="commandInput" autofocus autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="invoiceModal">
+        <span class="modal-close" onclick="hideModal('invoiceModal')">&times;</span>
+        <div class="modal-content">
+            <h2 style="margin-bottom: 2rem;">Analisando Fatura...</h2>
+            <div class="invoice-paper">
+                <div class="invoice-header">
+                    <div><h1><i class="fas fa-bolt"></i> Energia S.A.</h1><span>Rua da Automação, 123 - Campinas/SP</span></div>
+                    <div><strong>FATURA Nº:</strong> 202509-001<br><strong>Data de Emissão:</strong> 01/10/2025</div>
+                </div>
+                <div class="customer-details">
+                    <div><strong>CLIENTE:</strong> Empresa Exemplo Ltda.</div><div><strong>CNPJ:</strong> 00.123.456/0001-78</div><div><strong>Endereço:</strong> Av. dos Projetos, 456 - Campinas/SP</div>
+                </div>
+                <table class="invoice-items"><thead><tr><th>Descrição</th><th class="text-right">Quantidade</th><th class="text-right">Valor (R$)</th></tr></thead>
+                    <tbody><tr><td>Consumo de Energia (kWh)</td><td class="text-right">500</td><td class="text-right">1.100,00</td></tr><tr><td>Taxas e Impostos (ICMS, PIS/COFINS)</td><td class="text-right">-</td><td class="text-right">134,56</td></tr></tbody>
+                </table>
+                <div class="invoice-summary"><table class="summary-table"><tr><td>Subtotal:</td><td class="text-right">R$ 1.234,56</td></tr><tr class="summary-total"><td>VALOR TOTAL:</td><td class="text-right">R$ 1.234,56</td></tr></table></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="reportModal">
+        <span class="modal-close" onclick="hideModal('reportModal')">&times;</span>
+        <div class="modal-content" style="width: 900px; max-width: 90%;">
+            <h2>Relatório Gerado: Relatorio.xlsx</h2>
+            <table class="report-table">
+                <thead><tr><th>Cliente</th><th class="currency">Valor (R$)</th><th class="currency">Consumo (kWh)</th><th>Mês de Referência</th></tr></thead>
+                <tbody><tr><td>Empresa Exemplo Ltda.</td><td class="currency">1.234,56</td><td class="currency">500</td><td>Setembro/2025</td></tr><tr><td>Outro Cliente S.A.</td><td class="currency">876,54</td><td class="currency">350</td><td>Setembro/2025</td></tr><tr><td>Comércio Varejista Um</td><td class="currency">2.543,21</td><td class="currency">1100</td><td>Setembro/2025</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const terminalBody = document.getElementById('terminalBody');
+        terminalBody.addEventListener('keydown', handleCommand);
+        function handleCommand(e) {
+            if (e.target.id !== 'commandInput' || e.key !== 'Enter') return;
+            const commandInput = e.target;
+            const command = commandInput.value.trim();
+            const line = commandInput.parentElement;
+            line.innerHTML = `<span class="prompt">$ &nbsp;</span>${command}`; 
+            if (command === 'python run.py') { runSimulation(); } 
+            else { addTerminalLine(`Comando não encontrado: ${command}`, 'error'); resetInput(); }
+        }
+        function addTerminalLine(text, type = 'output') { const line = document.createElement('div'); line.className = `terminal-line ${type}`; line.innerHTML = text; terminalBody.appendChild(line); terminalBody.scrollTop = terminalBody.scrollHeight; }
+        function resetInput() { const newLine = document.createElement('div'); newLine.className = 'terminal-line command-input-line'; newLine.innerHTML = `<span class="prompt">$ &nbsp;</span><input type="text" id="commandInput" autofocus autocomplete="off">`; terminalBody.appendChild(newLine); const newCmd = document.getElementById('commandInput'); newCmd.focus(); }
+        function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+        function showModal(id) { document.getElementById(id).classList.add('active'); }
+        function hideModal(id) { document.getElementById(id).classList.remove('active'); }
+        async function runSimulation() {
+            await sleep(500); addTerminalLine("Inicializando script de automação de faturas...", "comment"); await sleep(1500);
+            addTerminalLine("Procurando por arquivos .pdf na pasta 'faturas_entrada'..."); await sleep(1500);
+            addTerminalLine("3 arquivos encontrados..."); await sleep(1500);
+            addTerminalLine("\n[1/3] Processando 'fatura_empresa_exemplo.pdf'..."); await sleep(1000);
+            showModal('invoiceModal'); await sleep(3500); hideModal('invoiceModal');
+            addTerminalLine("   -> Dados extraídos: Cliente, Valor, Consumo."); await sleep(1500);
+            addTerminalLine("\n[2/3] Processando 'fatura_outro_cliente.pdf'..."); await sleep(1500);
+            addTerminalLine("   -> Dados extraídos: Cliente, Valor, Consumo."); await sleep(1500);
+            addTerminalLine("\n[3/3] Processando 'fatura_varejista_um.pdf'..."); await sleep(1500);
+            addTerminalLine("   -> Dados extraídos: Cliente, Valor, Consumo."); await sleep(1500);
+            addTerminalLine("\nTodos os arquivos processados. Consolidando dados...", "comment"); await sleep(1500);
+            addTerminalLine("Gerando relatório em formato Excel..."); await sleep(2000);
+            addTerminalLine("Relatório 'Relatorio.xlsx' criado com sucesso!", "success");
+            showModal('reportModal'); await sleep(1000);
+            resetInput();
+        }
+    </script>
+</body>
+</html>
