@@ -73,6 +73,6 @@ npm run dev
 
 🔗 **LinkedIn:** <https://www.linkedin.com/in/matheusmarafon>
 
-📧 **Email:** <mailto:marafonmatheus1@gmail.com>
+📧 **Email:** [marafonmatheus1@gmail.com](mailto:marafonmatheus1@gmail.com)
 
 🐙 **GitHub:** <https://github.com/MatheusMarafon>
