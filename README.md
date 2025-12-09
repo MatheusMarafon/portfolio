@@ -1,16 +1,16 @@
 # 🚀 Matheus Marafon | Software Engineer Portfolio
 
-> Um portfólio interativo e imersivo "Google Tier", desenvolvido para demonstrar habilidades em **Engenharia de Software, Automação (Python) e Frontend Moderno**.
+> Um portfólio interativo "Google Tier", desenvolvido para demonstrar habilidades em **Engenharia de Software, Automação (Python) e Frontend Moderno**.
 
 ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge)
-![Tech](https://img.shields.io/badge/Stack-React_|_Three.js_|_Tailwind-blue?style=for-the-badge&logo=react)
+![Tech](https://img.shields.io/badge/Stack-React_|_Tailwind_|_Framer_Motion-blue?style=for-the-badge&logo=react)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ## 🌐 Visão Geral
 
-Este projeto vai além de uma vitrine estática. É uma **Single Page Application (SPA)** construída com React e Vite, focada em performance e experiência do usuário (UX).
+Este projeto é uma **Single Page Application (SPA)** construída com React e Vite, focada em alta performance, acessibilidade e uma experiência de usuário (UX) premium.
 
-O objetivo é apresentar minha trajetória profissional unindo o rigor técnico do **Backend/Python** com a interatividade do **Frontend/WebGL**.
+O objetivo é apresentar minha trajetória profissional unindo a lógica de **Backend/Automação** com uma interface **Frontend elegante e responsiva**.
 
 **🔗 Acesse Online:** [https://matheusmarafon.github.io/portfolio/](https://matheusmarafon.github.io/portfolio/)
 
@@ -18,10 +18,10 @@ O objetivo é apresentar minha trajetória profissional unindo o rigor técnico 
 
 ## ✨ Funcionalidades Principais
 
-### 🤖 1. MatheusBot AI (Mascote 3D)
-Um assistente virtual com um **mascote 3D interativo** (renderizado em tempo real com React Three Fiber) que vive dentro da interface de chat.
-- **Tecnologia:** WebGL, Shaders, Framer Motion.
-- **Interação:** O robô segue o tempo, pisca e interage visualmente enquanto responde dúvidas sobre minha carreira.
+### 💬 1. MatheusBot (Assistente Virtual)
+Um chatbot integrado com interface "Glassmorphism" limpa e moderna.
+- **Funcionalidade:** Responde perguntas frequentes sobre minha carreira, stack técnica e contatos de forma interativa.
+- **Design:** UI minimalista com animações suaves de entrada e balões de mensagem dinâmicos.
 
 ### 💻 2. Terminal Hacker (Python Shell)
 Um emulador de terminal acessível via Dock, permitindo que recrutadores interajam com o site via linha de comando.
@@ -29,12 +29,12 @@ Um emulador de terminal acessível via Dock, permitindo que recrutadores interaj
 - **Easter Eggs:** Tente digitar `sudo hire` ou `help()`.
 
 ### 🌍 3. Internacionalização (i18n)
-Suporte nativo e instantâneo para **Português (BR)** e **Inglês (EN)** via Context API, sem recarregamento de página.
+Suporte nativo e instantâneo para **Português (BR)** e **Inglês (EN)** via Context API, alterando todo o conteúdo sem recarregar a página.
 
 ### 🎨 4. UX/UI Premium
-- **Spotlight Effect:** Cards de projetos que reagem à posição do mouse com iluminação dinâmica.
-- **Glassmorphism:** Uso intensivo de painéis de vidro fosco (`backdrop-blur`) para hierarquia visual.
-- **Design System:** Paleta de cores Dark Mode futurista com acentos em Neon e Azul.
+- **Spotlight Effect:** Cards de projetos que reagem à posição do mouse com iluminação dinâmica nas bordas.
+- **Glassmorphism:** Uso intensivo de painéis de vidro fosco (`backdrop-blur`) para hierarquia visual moderna.
+- **Design System:** Paleta de cores Dark Mode consistente com acentos em Neon e Azul.
 
 ---
 
@@ -46,9 +46,9 @@ O projeto foi construído utilizando as melhores práticas do mercado:
 |-----------|-------------|
 | **Core** | [React 18](https://reactjs.org/), [Vite](https://vitejs.dev/) |
 | **Estilização** | [Tailwind CSS v3](https://tailwindcss.com/) |
-| **3D & WebGL** | [React Three Fiber](https://docs.pmnd.rs/react-three-fiber), Drei, Three.js |
 | **Animações** | [Framer Motion](https://www.framer.com/motion/) (Transições de layout e UI) |
 | **Integração** | Formspree (Envio de e-mails serverless) |
+| **Deploy** | GitHub Pages (CI/CD Automatizado) |
 
 ---
 
