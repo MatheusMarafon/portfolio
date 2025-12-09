@@ -1,6 +1,6 @@
 # 🚀 Matheus Marafon | Software Engineer Portfolio
 
-> Um portfólio interativo "Google Tier", desenvolvido para demonstrar habilidades em **Engenharia de Software, Automação (Python) e Frontend Moderno**.
+> Um portfólio interativo, desenvolvido para demonstrar habilidades em **Engenharia de Software, Automação (Python) e Frontend Moderno**.
 
 ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge)
 ![Tech](https://img.shields.io/badge/Stack-React_|_Tailwind_|_Framer_Motion-blue?style=for-the-badge&logo=react)
