@@ -6,86 +6,73 @@
 ![Tech](https://img.shields.io/badge/Stack-React_|_Tailwind_|_Framer_Motion-blue?style=for-the-badge&logo=react)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
+---
+
 ## 🌐 Visão Geral
 
 Este projeto é uma **Single Page Application (SPA)** construída com React e Vite, focada em alta performance, acessibilidade e uma experiência de usuário (UX) premium.
 
 O objetivo é apresentar minha trajetória profissional unindo a lógica de **Backend/Automação** com uma interface **Frontend elegante e responsiva**.
 
-**🔗 Acesse Online:** [https://matheusmarafon.github.io/portfolio/](https://matheusmarafon.github.io/portfolio/)
+**🔗 Acesse Online:** https://matheusmarafon.github.io/portfolio/
 
 ---
 
 ## ✨ Funcionalidades Principais
 
 ### 💬 1. MatheusBot (Assistente Virtual)
-Um chatbot integrado com interface "Glassmorphism" limpa e moderna.
-- **Funcionalidade:** Responde perguntas frequentes sobre minha carreira, stack técnica e contatos de forma interativa.
-- **Design:** UI minimalista com animações suaves de entrada e balões de mensagem dinâmicos.
+Um chatbot integrado com interface Glassmorphism moderna.
+- Responde perguntas sobre minha carreira, skills e contato.
+- UI leve, clean e com animações suaves em balões de chat.
 
 ### 💻 2. Terminal Hacker (Python Shell)
-Um emulador de terminal acessível via Dock, permitindo que recrutadores interajam com o site via linha de comando.
-- **Comandos:** `import cv` (baixa currículo), `print(skills)`, `send_message()`.
-- **Easter Eggs:** Tente digitar `sudo hire` ou `help()`.
+Terminal interativo acessível via Dock dentro do site.
+- Comandos disponíveis: `import cv` (baixa currículo) • `print(skills)` • `send_message()`
+- **Easter Eggs incluídos:** `sudo hire` | `help()` 👀
 
 ### 🌍 3. Internacionalização (i18n)
-Suporte nativo e instantâneo para **Português (BR)** e **Inglês (EN)** via Context API, alterando todo o conteúdo sem recarregar a página.
+Suporte completo para **PT-BR ↔ EN** via Context API, com troca instantânea sem recarregar a página.
 
-### 🎨 4. UX/UI Premium
-- **Spotlight Effect:** Cards de projetos que reagem à posição do mouse com iluminação dinâmica nas bordas.
-- **Glassmorphism:** Uso intensivo de painéis de vidro fosco (`backdrop-blur`) para hierarquia visual moderna.
-- **Design System:** Paleta de cores Dark Mode consistente com acentos em Neon e Azul.
+### 🎨 4. UI/UX Premium
+- **Spotlight Effect** em cards de projeto com iluminação dinâmica (follow-mouse)
+- **Glassmorphism** com `backdrop-blur` aplicado globalmente
+- Paleta Dark elegante com neon/azul para destaque visual
 
 ---
 
 ## 🛠️ Stack Tecnológica
 
-O projeto foi construído utilizando as melhores práticas do mercado:
-
 | Categoria | Tecnologias |
-|-----------|-------------|
-| **Core** | [React 18](https://reactjs.org/), [Vite](https://vitejs.dev/) |
-| **Estilização** | [Tailwind CSS v3](https://tailwindcss.com/) |
-| **Animações** | [Framer Motion](https://www.framer.com/motion/) (Transições de layout e UI) |
-| **Integração** | Formspree (Envio de e-mails serverless) |
-| **Deploy** | GitHub Pages (CI/CD Automatizado) |
+|----------|-------------|
+| **Core** | React 18, Vite |
+| **UI** | TailwindCSS v3 |
+| **Animações** | Framer Motion |
+| **Integração** | Formspree (Serverless contact) |
+| **Deploy** | GitHub Pages (CI/CD) |
 
 ---
 
 ## 📂 Projetos em Destaque
 
-O portfólio exibe projetos que cobrem todo o espectro de desenvolvimento:
-
-- **Ecossistema VeTech (TCC):** Full-stack (Django + React Native) com IA.
-- **Auto-Bot CCEE:** Automação Python de alta performance (Selenium).
-- **Mapa Mental IA:** Integração com Google Gemini API.
-- **Extrator de Faturas:** Engenharia de dados com Pandas e Regex.
+- **Ecossistema VeTech (TCC)** → Plataforma full-stack (Django + React Native + IA)
+- **Auto-Bot CCEE** → Automação Python para extração avançada (Selenium)
+- **Mapa Mental IA** → Integração com Google Gemini para geração dinâmica
+- **Extrator de Faturas** → Engenharia de dados com Pandas, Regex e validação automática
 
 ---
 
 ## 🚀 Como Rodar Localmente
 
-Se você quiser clonar e estudar a estrutura deste projeto:
-
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/MatheusMarafon/portfolio.git](https://github.com/MatheusMarafon/portfolio.git)
-Instale as dependências:
-
-Bash
-
+```bash
+git clone https://github.com/MatheusMarafon/portfolio.git
 cd portfolio
 npm install
-Inicie o servidor de desenvolvimento:
-
-Bash
-
 npm run dev
-📬 Contato
-Estou disponível para novas oportunidades em Engenharia de Software, com foco em Python e Automação.
+```
+## 📬 Contato
 
-LinkedIn: Matheus Marafon
+🔗 **LinkedIn:** <https://www.linkedin.com/in/matheusmarafon>
 
-Email: marafonmatheus1@gmail.com
+📧 **Email:** <mailto:marafonmatheus1@gmail.com>
 
-GitHub: @MatheusMarafon
+🐙 **GitHub:** <https://github.com/MatheusMarafon>
