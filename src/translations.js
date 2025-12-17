@@ -155,7 +155,7 @@ export const translations = {
         python: "O Matheus utiliza Python e SQL como ferramentas principais para resolver problemas complexos, seja automatizando processos manuais ou criando sistemas web robustos.",
         auto: "Com 1 ano de experiência no setor de energia, ele cria automações que economizam centenas de horas, integrando Python, VBA e bancos de dados.",
         contact: "A forma mais rápida é pelo formulário de contato abaixo ou enviando um e-mail direto para marafonmatheus1@gmail.com.",
-        tcc: "O VeTech é um ecossistema completo (Web & Mobile) para clínicas veterinárias. Ele utiliza Django no backend, React Native no mobile e IA para diagnósticos."
+        tcc: "O VeTech é um ecossistema completo (Web & Mobile) para clínicas veterinárias. Ele utiliza Django no backend, React Native no mobile e IA (Gemini API) para diagnósticos."
       },
       input_placeholder: "Escolha uma opção acima..."
     }
@@ -168,7 +168,7 @@ export const translations = {
         'Python & SQL Developer', 
         'Process Automation', 
         'Database & Analysis', 
-        'Software Engineering (4th Year)'
+        'Software Engineering Student (4th Year)'
       ],
       stats: {
         exp_value: "1 Year",
@@ -192,7 +192,7 @@ export const translations = {
           year: "2025",
           title: "Final Thesis (TCC)",
           subtitle: "VeTech (Web & Mobile)",
-          description: "Development of a complete ecosystem for veterinary clinics. Django Backend, React Native App, and AI integration."
+          description: "Development of a complete ecosystem for veterinary clinics. Fast API Backend, React Native App, and AI integration (Gemini API)."
         },
         {
           year: "2024",
@@ -316,7 +316,7 @@ export const translations = {
         python: "Matheus uses Python and SQL as his main tools to solve complex problems, whether automating manual processes or building robust web systems.",
         auto: "With 1 year of experience in the energy sector, he creates automations that save hundreds of hours, integrating Python, VBA, and databases.",
         contact: "The fastest way is through the contact form below or by sending an email directly to marafonmatheus1@gmail.com.",
-        tcc: "VeTech is a complete ecosystem (Web & Mobile) for veterinary clinics. It uses Django on the backend, React Native on mobile, and AI for diagnostics."
+        tcc: "VeTech is a complete ecosystem (Web & Mobile) for veterinary clinics. It uses Fast API on the backend, React Native on mobile, and AI for diagnostics."
       },
       input_placeholder: "Choose an option above..."
     }

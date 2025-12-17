@@ -79,7 +79,7 @@ const Terminal = ({ isOpen, onClose }) => {
 
     else if (cmd === 'sudo hire' || cmd === 'sudo_hire()') {
         newHistory.push({ type: 'success', content: "ROOT ACCESS GRANTED." });
-        newHistory.push({ type: 'response', content: "Please initiate contract protocol at: matheus@email.com" });
+        newHistory.push({ type: 'response', content: "Please initiate contract protocol at: marafonmatheus1@gmail.com" });
     }
 
     else if (cmd.startsWith('send_message(')) {
