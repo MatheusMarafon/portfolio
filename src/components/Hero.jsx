@@ -98,7 +98,7 @@ const Hero = () => {
                         </div>
 
                         <a 
-                            href="/assets/curriculo.pdf" 
+                            href='/public/assets/curriculo-matheus-marafon.pdf' 
                             download 
                             className="w-full mt-2 group relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 p-[1px] transition-all hover:scale-[1.02] active:scale-[0.98]"
                         >
