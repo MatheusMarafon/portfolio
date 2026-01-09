@@ -1,5 +1,10 @@
 export const translations = {
   pt: {
+    header: {
+      about: "Sobre",
+      projects: "Projetos",
+      contact: "Contato"
+    },
     hero: {
       badge: "Disponível para novos projetos",
       role: "Engenheiro de Software",
@@ -7,7 +12,7 @@ export const translations = {
         'Desenvolvedor Python & SQL', 
         'Automação de Processos', 
         'Banco de Dados & Análise', 
-        'Engenharia de Software (4º Ano)'
+        'Engenharia de Software'
       ],
       stats: {
         exp_value: "1 Ano",
@@ -15,7 +20,72 @@ export const translations = {
         edu_value: "4º Ano",
         edu_label: "Eng. de Software",
         cv_btn: "Baixar Currículo PDF"
+      },
+      greeting: "Olá, eu sou",
+      name: "Matheus Marafon",
+      description: "Especialista em criar soluções automatizadas e interfaces modernas. Transformo processos complexos em código eficiente.",
+      buttons: {
+        projects: "Ver Projetos",
+        contact: "Entrar em Contato"
       }
+    },
+    about: {
+      title: "Sobre Mim",
+      description: "Sou apaixonado por resolver problemas reais através da tecnologia. Minha jornada combina uma forte base em Python e Automação com a capacidade de criar interfaces web interativas e responsivas.",
+      skills_title: "Tech Stack"
+    },
+    education: {
+      badge: "Formação & Estudos",
+      title: "Trajetória Técnica",
+      subtitle: "Foco total em Engenharia de Dados e BI através de projetos práticos e roadmaps especializados.",
+      academic: [
+        {
+          course: "Data Engineering Roadmap",
+          institution: "Projeto GitHub",
+          year: "2024 - Atual",
+          description: "Trilha avançada de Engenharia de Dados: Pipelines, ETL e Automação.",
+          link: "https://github.com/MatheusMarafon/data-engineering-roadmap"
+        },
+        {
+          course: "BI & Analytics Dashboard",
+          institution: "Projeto GitHub",
+          year: "2024",
+          description: "Dashboard interativo de BI com análise de dados e KPIs estratégicos.",
+          link: "https://github.com/MatheusMarafon/bi-analytics-dashboard"
+        }
+      ],
+      roadmap: [
+        {
+          title: "Fundamentos: Python & Git",
+          status: "completed",
+          description: "Automação e Versionamento.",
+          stack: ["Python", "Git", "Lógica"]
+        },
+        {
+          title: "SQL & Modelagem",
+          status: "completed",
+          description: "Manipulação avançada de dados.",
+          stack: ["PostgreSQL", "SQL", "Pandas"]
+        },
+        {
+          title: "Engenharia de Dados",
+          status: "progress",
+          description: "Pipelines ETL e APIs.",
+          stack: ["ETL", "APIs", "Web Scraping"]
+        },
+        {
+          title: "Business Intelligence",
+          status: "progress",
+          description: "Dashboards e Storytelling.",
+          stack: ["Power BI", "Streamlit"]
+        },
+        {
+          title: "Cloud & Big Data",
+          status: "future",
+          description: "Escalabilidade na nuvem.",
+          stack: ["AWS", "Data Lake"]
+        }
+      ]
     },
     timeline: {
       title: "Minha",
@@ -31,7 +101,7 @@ export const translations = {
           year: "2025",
           title: "Reta Final & TCC",
           subtitle: "VeTech (Web & Mobile)",
-          description: "Desenvolvimento do ecossistema completo para clínicas veterinárias. Backend Django, App React Native e integração com IA."
+          description: "Desenvolvimento do ecossistema completo para clínicas veterinárias. Backend FastAPI, App React Native e integração com IA."
         },
         {
           year: "2024",
@@ -48,7 +118,7 @@ export const translations = {
         {
           year: "2022",
           title: "Início da Graduação",
-          subtitle: "PUCC - Eng. Software",
+          subtitle: "Eng. Software",
           description: "Foco total em fundamentos de algoritmos, lógica de programação estruturada e primeiros passos no desenvolvimento Web (HTML/CSS)."
         }
       ]
@@ -155,12 +225,13 @@ export const translations = {
         python: "O Matheus utiliza Python e SQL como ferramentas principais para resolver problemas complexos, seja automatizando processos manuais ou criando sistemas web robustos.",
         auto: "Com 1 ano de experiência no setor de energia, ele cria automações que economizam centenas de horas, integrando Python, VBA e bancos de dados.",
         contact: "A forma mais rápida é pelo formulário de contato abaixo ou enviando um e-mail direto para marafonmatheus1@gmail.com.",
-        tcc: "O VeTech é um ecossistema completo (Web & Mobile) para clínicas veterinárias. Ele utiliza Django no backend, React Native no mobile e IA (Gemini API) para diagnósticos."
+        tcc: "O VeTech é um ecossistema completo (Web & Mobile) para clínicas veterinárias. Ele utiliza FastAPI no backend, React Native no mobile e IA (Gemini API) para diagnósticos."
       },
       input_placeholder: "Escolha uma opção acima..."
     }
   },
   en: {
+    header: { about: "About", projects: "Projects", contact: "Contact" },
     hero: {
       badge: "Available for new projects",
       role: "Software Engineer",
@@ -168,7 +239,7 @@ export const translations = {
         'Python & SQL Developer', 
         'Process Automation', 
         'Database & Analysis', 
-        'Software Engineering Student (4th Year)'
+        'Software Engineering'
       ],
       stats: {
         exp_value: "1 Year",
@@ -176,7 +247,47 @@ export const translations = {
         edu_value: "4th Year",
         edu_label: "Soft. Engineering",
         cv_btn: "Download Resume PDF"
+      },
+      greeting: "Hi, I am",
+      name: "Matheus Marafon",
+      description: "Specialist in automated solutions and modern interfaces. I transform complex processes into efficient code.",
+      buttons: {
+        projects: "View Projects",
+        contact: "Get in Touch"
       }
+    },
+    about: {
+      title: "About Me",
+      description: "I am passionate about solving real problems through technology. My journey combines a strong foundation in Python and Automation with the ability to create interactive web interfaces.",
+      skills_title: "Tech Stack"
+    },
+    education: {
+      badge: "Education & Studies",
+      title: "Technical Path",
+      subtitle: "Focused on Data Engineering and BI through practical projects.",
+      academic: [
+        {
+          course: "Data Engineering Roadmap",
+          institution: "GitHub Project",
+          year: "2024 - Current",
+          description: "Advanced Data Engineering path: Pipelines, ETL and Automation.",
+          link: "https://github.com/MatheusMarafon/data-engineering-roadmap"
+        },
+        {
+          course: "BI & Analytics Dashboard",
+          institution: "GitHub Project",
+          year: "2024",
+          description: "Interactive BI Dashboard with data analysis and strategic KPIs.",
+          link: "https://github.com/MatheusMarafon/bi-analytics-dashboard"
+        }
+      ],
+      roadmap: [
+        { title: "Fundamentals: Python", status: "completed", description: "Automation & Logic.", stack: ["Python", "Git"] },
+        { title: "SQL & Modeling", status: "completed", description: "Advanced Data Manipulation.", stack: ["PostgreSQL", "Pandas"] },
+        { title: "Data Engineering", status: "progress", description: "ETL Pipelines & APIs.", stack: ["ETL", "APIs"] },
+        { title: "Business Intelligence", status: "progress", description: "Dashboards & Storytelling.", stack: ["Power BI", "Streamlit"] },
+        { title: "Cloud & Big Data", status: "future", description: "Cloud Scalability.", stack: ["AWS", "Data Lake"] }
+      ]
     },
     timeline: {
       title: "My",
@@ -192,7 +303,7 @@ export const translations = {
           year: "2025",
           title: "Final Thesis (TCC)",
           subtitle: "VeTech (Web & Mobile)",
-          description: "Development of a complete ecosystem for veterinary clinics. Fast API Backend, React Native App, and AI integration (Gemini API)."
+          description: "Development of a complete ecosystem for veterinary clinics. FastAPI Backend, React Native App, and AI integration (Gemini API)."
         },
         {
           year: "2024",
@@ -209,7 +320,7 @@ export const translations = {
         {
           year: "2022",
           title: "University Start",
-          subtitle: "PUCC - Soft. Eng.",
+          subtitle: "Soft. Eng.",
           description: "Strong focus on algorithms fundamentals, structured programming logic, and first steps in Web Development (HTML/CSS)."
         }
       ]
@@ -316,7 +427,7 @@ export const translations = {
         python: "Matheus uses Python and SQL as his main tools to solve complex problems, whether automating manual processes or building robust web systems.",
         auto: "With 1 year of experience in the energy sector, he creates automations that save hundreds of hours, integrating Python, VBA, and databases.",
         contact: "The fastest way is through the contact form below or by sending an email directly to marafonmatheus1@gmail.com.",
-        tcc: "VeTech is a complete ecosystem (Web & Mobile) for veterinary clinics. It uses Fast API on the backend, React Native on mobile, and AI for diagnostics."
+        tcc: "VeTech is a complete ecosystem (Web & Mobile) for veterinary clinics. It uses FastAPI on the backend, React Native on mobile, and AI for diagnostics."
       },
       input_placeholder: "Choose an option above..."
     }
